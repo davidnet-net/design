@@ -1,0 +1,128 @@
+/* Shared Button Styles */
+.subtle-icon-btn,
+.default-icon-btn,
+.primary-icon-btn,
+.warning-icon-btn,
+.danger-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  margin: 0;
+  padding: 0.2rem 0.3rem;
+
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+  font-family: "Nunito Sans";
+  font-weight: 600;
+  text-align: center;
+
+  line-height: 1.2;
+}
+
+.btn-icon {
+  font-size: 1.2rem;
+  line-height: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Sublte */
+.subtle-icon-btn {
+  color: var(--color-subtle-text);
+  background-color: var(--color-subtle-bg);
+}
+
+.subtle-icon-btn:hover {
+  background-color: var(--color-subtle-bg-hover);
+}
+
+.subtle-icon-btn:active {
+  background-color: var(--color-subtle-bg-active);
+}
+
+.subtle-icon-btn:disabled {
+  background-color: var(--color-subtle-bg-disabled);
+  cursor: not-allowed;
+}
+
+
+/* Default */
+.default-icon-btn {
+  color: var(--color-default-text);
+  background-color: var(--color-default-bg);
+}
+
+.default-icon-btn:hover {
+  background-color: var(--color-default-bg-hover);
+}
+
+.default-icon-btn:active {
+  background-color: var(--color-default-bg-active);
+}
+
+.default-icon-btn:disabled {
+  background-color: var(--color-default-bg-disabled);
+  cursor: not-allowed;
+}
+
+/* Primary */
+.primary-icon-btn {
+  color: var(--color-primary-text);
+  background-color: var(--color-primary-bg);
+}
+
+.primary-icon-btn:hover {
+  background-color: var(--color-primary-bg-hover);
+}
+
+.primary-icon-btn:active {
+  background-color: var(--color-primary-bg-active);
+}
+
+.primary-icon-btn:disabled {
+  background-color: var(--color-primary-bg-disabled);
+  cursor: not-allowed;
+}
+
+/* Warning */
+.warning-icon-btn {
+  color: var(--color-warning-text);
+  background-color: var(--color-warning-bg);
+}
+
+.warning-icon-btn:hover {
+  background-color: var(--color-warning-bg-hover);
+}
+
+.warning-icon-btn:active {
+  background-color: var(--color-warning-bg-active);
+}
+
+.warning-icon-btn:disabled {
+  background-color: var(--color-warning-bg-disabled);
+  cursor: not-allowed;
+}
+
+/* Danger */
+.danger-icon-btn {
+  color: var(--color-danger-text);
+  background-color: var(--color-danger-bg);
+}
+
+.danger-icon-btn:hover {
+  background-color: var(--color-danger-bg-hover);
+}
+
+.danger-icon-btn:active {
+  background-color: var(--color-danger-bg-active);
+}
+
+.danger-icon-btn:disabled {
+  background-color: var(--color-danger-bg-disabled);
+  cursor: not-allowed;
+}

@@ -1,0 +1,36 @@
+:root {
+  /* sublte colors */
+  --color-subtle-text: black;
+  --color-subtle-bg: #ffffff2a;
+  --color-subtle-bg-hover: #ececec6b;
+  --color-subtle-bg-active: #d6d6d6;
+  --color-subtle-bg-disabled: #d6d6d6;
+
+  /* Default colors */
+  --color-default-text: black;
+  --color-default-bg: #e7e7e9b0;
+  --color-default-bg-hover: #d9d9da;
+  --color-default-bg-active: #c7c7c9;
+  --color-default-bg-disabled: #e7e7e981;
+
+  /* Primary colors */
+  --color-primary-text: white;
+  --color-primary-bg: #3c86ec;
+  --color-primary-bg-hover: #247af3;
+  --color-primary-bg-active: #0c66e4;
+  --color-primary-bg-disabled: #3c85ec8c;
+
+  /* Warning colors */
+  --color-warning-text: black;
+  --color-warning-bg: #f5cd47;
+  --color-warning-bg-hover: #e6c045;
+  --color-warning-bg-active: #c4a130;
+  --color-warning-bg-disabled: #f5cc4788;
+
+  /* Danger colors */
+  --color-danger-text: white;
+  --color-danger-bg: #c9372c;
+  --color-danger-bg-hover: #bd3026;
+  --color-danger-bg-active: #a1271e;
+  --color-danger-bg-disabled: #c9362c86;
+}
