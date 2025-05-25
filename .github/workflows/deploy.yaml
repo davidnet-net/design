@@ -18,5 +18,5 @@ jobs:
                   sshpass -p "${{ secrets.SSH_PASS }}" ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
                     cd /var/www
                     chmod +x updatedesign.sh
-                    ./updatedesign.sh
+                    sudo bash updatedesign.sh
                   EOF
