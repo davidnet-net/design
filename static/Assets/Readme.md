@@ -1,0 +1,1 @@
+This folder will be the assets location for svelte-ui!
