@@ -1,1 +1,1 @@
-This folder will be the assets location for svelte-ui!
+This folder is the location for assets for svelte-ui!
