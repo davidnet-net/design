@@ -19,6 +19,6 @@
         flex-direction: column;
         width: 150px;
         border-right: #4b4b4d solid 1px;
-        background-color: #1f1f21;
+        background-color: #181a1b;
     }
 </style>

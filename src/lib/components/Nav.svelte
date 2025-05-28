@@ -58,7 +58,7 @@
 		z-index: 2;
 
 		height: 40px;
-		background-color: #1f1f21;
+		background-color: #181a1b;
 
 		width: calc(100% - 8px);
 		padding: 4px;
