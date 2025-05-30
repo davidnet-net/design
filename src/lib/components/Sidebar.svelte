@@ -2,11 +2,8 @@
 	import { Button, LinkButton } from "@davidnet/svelte-ui";
 </script>
 <nav>
-        <LinkButton
-        appearance="subtle-white"
-        iconBefore=""
-        href="/"
-        >Home</LinkButton>
+        <LinkButton appearance="subtle-white" iconBefore="" href="/">Home</LinkButton>
+        <LinkButton appearance="subtle-white" iconBefore="" href="/Language">Language</LinkButton>
 </nav>
 
 <style>
