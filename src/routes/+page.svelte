@@ -48,6 +48,7 @@
 <Button appearance="danger">Danger Button</Button>
 <Button appearance="discover">Discover Button</Button>
 <Button appearance="primary" disabled={true}>Disabled Button</Button>
+<Button loading={true}>Disabled Button</Button>
 
 <br>
 <Space height="50px"/>
