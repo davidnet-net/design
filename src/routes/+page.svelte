@@ -47,6 +47,7 @@
 <Button appearance="warning">Warning Button</Button>
 <Button appearance="danger">Danger Button</Button>
 <Button appearance="discover">Discover Button</Button>
+<Button appearance="primary" disabled={true}>Disabled Button</Button>
 
 <br>
 <Space height="50px"/>
@@ -63,15 +64,15 @@
 <Space height="50px"/>
 
 <SplitButton
-	label="Save"
-	appearance="primary"
-	iconbefore="save"
-	actions={[
-		{ label: 'Save', onClick: () => console.log('Primary Save') },
-		{ label: 'Save as Draft', onClick: () => console.log('Draft') },
-		{ label: 'Save & Publish', onClick: () => console.log('Publish') }
-	]}
-/>
+    appearance="primary"
+    onClick={() => console.log('Main clicked')}
+    actions={[
+        { label: "Secondary A", onClick: () => console.log("Clicked A") },
+        { label: "Secondary B", onClick: () => console.log("Clicked B") }
+    ]}>
+    Main
+</SplitButton>
+
 
 <br>
 <Space height="50px"/>
