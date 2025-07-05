@@ -1,0 +1,17 @@
+body {
+
+    font-family: Inter;
+    background: var(--token-color-surface-default-normal);
+    color: var(--token-color-text-default-normal);
+    transition: color 500ms ease,
+    background-color 500ms ease;
+
+    box-sizing: border-box;
+
+    /* Reset */
+    margin: 0px;
+    padding: 0px;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}

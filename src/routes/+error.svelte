@@ -1,5 +1,2 @@
-<h1>404</h1>
-
-Hier komen alleen oude mensen
-
+<h1>Error</h1>
 <a href="/">Terug naar <code>/</code></a>

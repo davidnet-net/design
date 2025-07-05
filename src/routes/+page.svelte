@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ThemeMenu, Button, SplitButton, LinkButton, IconButton, LinkIconButton, Modal, Space } from '@davidnet/svelte-ui';
+	import { ThemeMenu, Button, SplitButton, LinkButton, IconButton, LinkIconButton, Modal, Space, Dropdown } from '@davidnet/svelte-ui';
 	let showModal = false;
 
 	function closeModal() {
@@ -85,6 +85,8 @@
 
 <IconButton alt="Test Button" icon="star" appearance="warning"></IconButton>
 
+<IconButton alt="Disabled Button" icon="star" appearance="warning" disabled></IconButton>
+
 <br>
 <Space height="50px"/>
 
@@ -108,6 +110,21 @@
     ]}
   />
 {/if}
+
+<br>
+<Space height="50px"/>
+
+
+<Dropdown
+  label="Kies een optie"
+  appearance="primary"
+  iconbefore="menu"
+  actions={[
+    { label: 'Optie 1', onClick: () => alert('Actie 1 uitgevoerd!') },
+    { label: 'Optie 2', onClick: () => alert('Actie 2 uitgevoerd!') },
+    { label: 'Optie 3', onClick: () => alert('Optie 3!') }
+  ]}
+/>
 
 <br>
 <Space height="50px"/>
@@ -159,13 +176,8 @@
 
 <style>
 	:global(body) {
-		font-family: Inter;
-		background: var(--token-color-surface-default-normal);
-		color: var(--token-color-text-default-normal);
-		padding: 2rem;
-		transition: color 500ms ease, background-color 500ms ease;
+		padding: 3rem;
 	}
-
 	.swatch {
 		margin: 0.5rem 0;
 	}
