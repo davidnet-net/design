@@ -47,8 +47,8 @@
 <Button appearance="warning">Warning Button</Button>
 <Button appearance="danger">Danger Button</Button>
 <Button appearance="discover">Discover Button</Button>
-<Button appearance="primary" disabled={true}>Disabled Button</Button>
-<Button loading={true}>Disabled Button</Button>
+<Button appearance="primary" disabled>Disabled Button</Button>
+<Button loading>Disabled Button</Button>
 
 <br>
 <Space height="50px"/>
@@ -87,6 +87,8 @@
 
 <IconButton alt="Disabled Button" icon="star" appearance="warning" disabled></IconButton>
 
+<IconButton alt="Loading Button" icon="star" appearance="warning" loading></IconButton>
+
 <br>
 <Space height="50px"/>
 
@@ -116,7 +118,6 @@
 
 
 <Dropdown
-  label="Kies een optie"
   appearance="primary"
   iconbefore="menu"
   actions={[
