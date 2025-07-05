@@ -42,9 +42,9 @@
 	<div class="swatch information"><span class="label">Information:</span> The quick brown fox</div>
 </div>
 
-<Button appearance="subtle">Subtle Button</Button>
-<Button appearance="primary">Primary Button</Button>
-<Button appearance="warning">Warning Button</Button>
+<Button appearance="subtle" onClick={() => console.log("Subtle Button Pressed")}>Subtle Button</Button>
+<Button appearance="primary" onClick={() => console.log("Primary Button Pressed")}>Primary Button</Button>
+<Button appearance="warning" onClick={() => console.log("Warning Button Pressed")}>Warning Button</Button>
 <Button appearance="danger">Danger Button</Button>
 <Button appearance="discover">Discover Button</Button>
 <Button appearance="primary" disabled>Disabled Button</Button>
@@ -125,7 +125,7 @@
     { label: 'Optie 2', onClick: () => alert('Actie 2 uitgevoerd!') },
     { label: 'Optie 3', onClick: () => alert('Optie 3!') }
   ]}
-/>
+>Dropdown</Dropdown>
 
 <br>
 <Space height="50px"/>
