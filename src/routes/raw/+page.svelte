@@ -51,216 +51,249 @@
 	}
 </script>
 
-<ThemeMenu />
+<div id="root">
+	<ThemeMenu />
 
-<div class="section">
-	<div class="swatch default-normal">
-		<span class="label">Default Normal:</span> The quick brown fox
+	<div class="section">
+		<div class="swatch default-normal">
+			<span class="label">Default Normal:</span> The quick brown fox
+		</div>
+		<div class="swatch default-secondary">
+			<span class="label">Default Secondary:</span> The quick brown fox
+		</div>
+		<div class="swatch default-tertiary">
+			<span class="label">Default Tertiary:</span> The quick brown fox
+		</div>
+		<div class="swatch disabled"><span class="label">Disabled:</span> The quick brown fox</div>
 	</div>
-	<div class="swatch default-secondary">
-		<span class="label">Default Secondary:</span> The quick brown fox
+
+	<div class="section">
+		<div class="swatch inverse-normal">
+			<span class="label">Inverse Normal:</span> The quick brown fox
+		</div>
+		<div class="swatch inverse-secondary">
+			<span class="label">Inverse Secondary:</span> The quick brown fox
+		</div>
+		<div class="swatch inverse-tertiary">
+			<span class="label">Inverse Tertiary:</span> The quick brown fox
+		</div>
 	</div>
-	<div class="swatch default-tertiary">
-		<span class="label">Default Tertiary:</span> The quick brown fox
+
+	<div class="section">
+		<div class="swatch danger"><span class="label">Danger:</span> The quick brown fox</div>
+		<div class="swatch warning"><span class="label">Warning:</span> The quick brown fox</div>
+		<div class="swatch success"><span class="label">Success:</span> The quick brown fox</div>
+		<div class="swatch discover"><span class="label">discover:</span> The quick brown fox</div>
+		<div class="swatch information">
+			<span class="label">Information:</span> The quick brown fox
+		</div>
 	</div>
-	<div class="swatch disabled"><span class="label">Disabled:</span> The quick brown fox</div>
-</div>
 
-<div class="section">
-	<div class="swatch inverse-normal">
-		<span class="label">Inverse Normal:</span> The quick brown fox
-	</div>
-	<div class="swatch inverse-secondary">
-		<span class="label">Inverse Secondary:</span> The quick brown fox
-	</div>
-	<div class="swatch inverse-tertiary">
-		<span class="label">Inverse Tertiary:</span> The quick brown fox
-	</div>
-</div>
+	<h2>Buttons</h2>
 
-<div class="section">
-	<div class="swatch danger"><span class="label">Danger:</span> The quick brown fox</div>
-	<div class="swatch warning"><span class="label">Warning:</span> The quick brown fox</div>
-	<div class="swatch success"><span class="label">Success:</span> The quick brown fox</div>
-	<div class="swatch discover"><span class="label">discover:</span> The quick brown fox</div>
-	<div class="swatch information"><span class="label">Information:</span> The quick brown fox</div>
-</div>
+	<Button appearance="subtle" onClick={() => console.log('Subtle Button Pressed')}
+		>Subtle Button</Button
+	>
+	<Button appearance="primary" onClick={() => console.log('Primary Button Pressed')}
+		>Primary Button</Button
+	>
+	<Button appearance="warning" onClick={() => console.log('Warning Button Pressed')}
+		>Warning Button</Button
+	>
+	<Button appearance="danger">Danger Button</Button>
+	<Button appearance="discover">Discover Button</Button>
+	<Button appearance="primary" disabled>Disabled Button</Button>
+	<Button loading>Disabled Button</Button>
 
-<h2>Buttons</h2>
+	<br />
+	<Space height="50px" />
+	<h2>Button Icons</h2>
 
-<Button appearance="subtle" onClick={() => console.log('Subtle Button Pressed')}
-	>Subtle Button</Button
->
-<Button appearance="primary" onClick={() => console.log('Primary Button Pressed')}
-	>Primary Button</Button
->
-<Button appearance="warning" onClick={() => console.log('Warning Button Pressed')}
-	>Warning Button</Button
->
-<Button appearance="danger">Danger Button</Button>
-<Button appearance="discover">Discover Button</Button>
-<Button appearance="primary" disabled>Disabled Button</Button>
-<Button loading>Disabled Button</Button>
+	<Button iconbefore="star" appearance="primary">iconbefore</Button>
+	<Button iconafter="star" appearance="primary">iconafter</Button>
 
-<br />
-<Space height="50px" />
-<h2>Button Icons</h2>
+	<br />
+	<Space height="50px" />
+	<h2>SplitButton</h2>
 
-<Button iconbefore="star" appearance="primary">iconbefore</Button>
-<Button iconafter="star" appearance="primary">iconafter</Button>
+	<SplitButton
+		appearance="primary"
+		onClick={() => console.log('Main clicked')}
+		actions={[
+			{ label: 'Secondary A', onClick: () => console.log('Clicked A') },
+			{ label: 'Secondary B', onClick: () => console.log('Clicked B') }
+		]}
+	>
+		Main
+	</SplitButton>
 
-<br />
-<Space height="50px" />
-<h2>SplitButton</h2>
+	<br />
+	<Space height="50px" />
+	<h2>LinkButton</h2>
 
-<SplitButton
-	appearance="primary"
-	onClick={() => console.log('Main clicked')}
-	actions={[
-		{ label: 'Secondary A', onClick: () => console.log('Clicked A') },
-		{ label: 'Secondary B', onClick: () => console.log('Clicked B') }
-	]}
->
-	Main
-</SplitButton>
+	<LinkButton href="https://davidnet.net" appearance="primary" iconafter="open_in_new"
+		>Link Button</LinkButton
+	>
 
-<br />
-<Space height="50px" />
-<h2>LinkButton</h2>
+	<br />
+	<Space height="50px" />
+	<h2>IconButtons</h2>
 
-<LinkButton href="https://davidnet.net" appearance="primary" iconafter="open_in_new"
-	>Link Button</LinkButton
->
+	<IconButton alt="Test Button" icon="star" appearance="warning"></IconButton>
 
-<br />
-<Space height="50px" />
-<h2>IconButtons</h2>
+	<IconButton alt="Disabled Button" icon="star" appearance="warning" disabled></IconButton>
 
-<IconButton alt="Test Button" icon="star" appearance="warning"></IconButton>
+	<IconButton alt="Loading Button" icon="star" appearance="warning" loading></IconButton>
 
-<IconButton alt="Disabled Button" icon="star" appearance="warning" disabled></IconButton>
+	<br />
+	<Space height="50px" />
+	<h2>LinkIconButton</h2>
 
-<IconButton alt="Loading Button" icon="star" appearance="warning" loading></IconButton>
+	<LinkIconButton alt="Test Link" href="https://davidnet.net" icon="star" appearance="warning"
+	></LinkIconButton>
 
-<br />
-<Space height="50px" />
-<h2>LinkIconButton</h2>
+	<br />
+	<Space height="50px" />
+	<h2>Modal</h2>
 
-<LinkIconButton alt="Test Link" href="https://davidnet.net" icon="star" appearance="warning"
-></LinkIconButton>
+	<Button appearance="discover" onClick={() => (showModal = true)}>Show Modal</Button>
 
-<br />
-<Space height="50px" />
-<h2>Modal</h2>
+	{#if showModal}
+		<Modal
+			title="Title?"
+			titleIcon="lightbulb"
+			desc="Description"
+			hasCloseBtn={true}
+			on:close={() => (showModal = false)}
+			options={[
+				{ appearance: 'primary', content: 'Done', onClick: closeModal },
+				{ appearance: 'subtle', content: 'Cancel', onClick: closeModal }
+			]}
+		/>
+	{/if}
 
-<Button appearance="discover" onClick={() => (showModal = true)}>Show Modal</Button>
+	<br />
+	<Space height="50px" />
+	<h2>Dropdown</h2>
 
-{#if showModal}
-	<Modal
-		title="Title?"
-		titleIcon="lightbulb"
-		desc="Description"
-		hasCloseBtn={true}
-		on:close={() => (showModal = false)}
-		options={[
+	<Dropdown
+		appearance="primary"
+		iconbefore="menu"
+		actions={[
+			{ label: 'Optie 1', onClick: () => alert('Actie 1 uitgevoerd!') },
+			{ label: 'Optie 2', onClick: () => alert('Actie 2 uitgevoerd!') },
+			{ label: 'Optie 3', onClick: () => alert('Optie 3!') }
+		]}>Dropdown</Dropdown
+	>
+
+	<br />
+	<Space height="50px" />
+	<h2>Toasts</h2>
+
+	<Button appearance="primary" onClick={() => showToast('bottom-left', 'info')}
+		>Toast - bottom-left</Button
+	>
+	<Button appearance="warning" onClick={() => showToast('bottom-center', 'warning')}
+		>Toast - bottom-center</Button
+	>
+	<Button appearance="danger" onClick={() => showToast('bottom-right', 'danger')}
+		>Toast - bottom-right</Button
+	>
+	<Button appearance="discover" onClick={() => showToast('top-left', 'discover')}
+		>Toast - top-left</Button
+	>
+	<Button appearance="subtle" onClick={() => showToast('top-center', 'success')}
+		>Toast - top-center</Button
+	>
+	<Button appearance="primary" onClick={() => showToast('top-right', 'primary')}
+		>Toast - top-right</Button
+	>
+	<br />
+	<Space height="20px" />
+	<a href="/otherpage">To /otherpage</a>
+	<br />
+	<Space height="20px" />
+
+	<h2>BlockNote</h2>
+
+	<BlockNote
+		appearance="info"
+		title="The quick brown fox"
+		actions={[
 			{ appearance: 'primary', content: 'Done', onClick: closeModal },
 			{ appearance: 'subtle', content: 'Cancel', onClick: closeModal }
 		]}
-	/>
-{/if}
+	>
+		The quick brown fox jumps over the lazy dog.
+	</BlockNote>
+	<Space height="20px" />
+	<BlockNote
+		appearance="warning"
+		title="The quick brown fox"
+		actions={[
+			{
+				appearance: 'link',
+				content: 'Done',
+				href: 'https://davidnet.net',
+				onClick: () => {
+					alert('Waah');
+				}
+			},
+			{
+				appearance: 'link',
+				content: 'Cancel',
+				href: 'https://davidnet.net',
+				onClick: () => {
+					alert('Waah');
+				}
+			}
+		]}
+	>
+		The quick brown fox jumps over the lazy dog.
+	</BlockNote>
+	<Space height="20px" />
+	<BlockNote
+		appearance="error"
+		title="The quick brown fox"
+		actions={[
+			{
+				appearance: 'primary',
+				content: 'Done',
+				href: 'https://davidnet.net',
+				onClick: () => {
+					alert('Waah');
+				}
+			},
+			{
+				appearance: 'subtle',
+				content: 'Cancel',
+				href: 'https://davidnet.net',
+				onClick: () => {
+					alert('Waah');
+				}
+			}
+		]}
+	>
+		The quick brown fox jumps over the lazy dog.
+	</BlockNote>
+	<br />
+	<Space height="50px" />
 
-<br />
-<Space height="50px" />
-<h2>Dropdown</h2>
+	<h1 class="MerriweatherSans">Merriweather Sans</h1>
+	<p class="MerriweatherSans">The quick brown fox jumps over the lazy dog</p>
 
-<Dropdown
-	appearance="primary"
-	iconbefore="menu"
-	actions={[
-		{ label: 'Optie 1', onClick: () => alert('Actie 1 uitgevoerd!') },
-		{ label: 'Optie 2', onClick: () => alert('Actie 2 uitgevoerd!') },
-		{ label: 'Optie 3', onClick: () => alert('Optie 3!') }
-	]}>Dropdown</Dropdown
->
+	<h1 class="JetBrainsMono">JetBrains Mono</h1>
+	<p class="JetBrainsMono">The quick brown fox jumps over the lazy dog</p>
 
-<br />
-<Space height="50px" />
-<h2>Toasts</h2>
-
-<Button appearance="primary" onClick={() => showToast('bottom-left', 'info')}
-	>Toast - bottom-left</Button
->
-<Button appearance="warning" onClick={() => showToast('bottom-center', 'warning')}
-	>Toast - bottom-center</Button
->
-<Button appearance="danger" onClick={() => showToast('bottom-right', 'danger')}
-	>Toast - bottom-right</Button
->
-<Button appearance="discover" onClick={() => showToast('top-left', 'discover')}
-	>Toast - top-left</Button
->
-<Button appearance="subtle" onClick={() => showToast('top-center', 'success')}
-	>Toast - top-center</Button
->
-<Button appearance="primary" onClick={() => showToast('top-right', 'primary')}
-	>Toast - top-right</Button
->
-<br>
-<Space height="20px" />
-<a href="/otherpage">To /otherpage</a>
-<br>
-<Space height="20px" />
-
-<h2>BlockNote</h2>
-
-<BlockNote
-	appearance="info"
-	title="The quick brown fox"
-	actions={[
-		{ appearance: 'primary', content: 'Done', onClick: closeModal },
-		{ appearance: 'subtle', content: 'Cancel', onClick: closeModal }
-	]}
->
-	The quick brown fox jumps over the lazy dog.
-</BlockNote>
-<Space height="20px" />
-<BlockNote
-	appearance="warning"
-	title="The quick brown fox"
-	actions={[
-		{ appearance: 'link', content: 'Done', href: "https://davidnet.net", onClick: () => {alert("Waah")}},
-		{ appearance: 'link', content: 'Cancel', href: "https://davidnet.net", onClick: () => {alert("Waah")}}
-	]}
->
-	The quick brown fox jumps over the lazy dog.
-</BlockNote>
-<Space height="20px" />
-<BlockNote
-	appearance="error"
-	title="The quick brown fox"
-	actions={[
-		{ appearance: 'primary', content: 'Done', href: "https://davidnet.net", onClick: () => {alert("Waah")}},
-		{ appearance: 'subtle', content: 'Cancel', href: "https://davidnet.net", onClick: () => {alert("Waah")}}
-	]}
->
-	The quick brown fox jumps over the lazy dog.
-</BlockNote>
-<br />
-<Space height="50px" />
-
-<h1 class="MerriweatherSans">Merriweather Sans</h1>
-<p class="MerriweatherSans">The quick brown fox jumps over the lazy dog</p>
-
-<h1 class="JetBrainsMono">JetBrains Mono</h1>
-<p class="JetBrainsMono">The quick brown fox jumps over the lazy dog</p>
-
-<h1 class="Inter">Inter</h1>
-<p class="Inter">The quick brown fox jumps over the lazy dog</p>
+	<h1 class="Inter">Inter</h1>
+	<p class="Inter">The quick brown fox jumps over the lazy dog</p>
+</div>
 
 <style>
-	:global(body) {
-		padding: 3rem !important;
+	#root {
+		padding: 3rem;
 	}
+
 	.swatch {
 		margin: 0.5rem 0;
 	}
