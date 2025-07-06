@@ -1,3 +1,8 @@
+<svelte:head>
+	<title>Raw - Davidnet Design</title>
+	<meta name="description" content="Displays all elements on a raw page." />
+</svelte:head>
+
 <script lang="ts">
 	import {
 		ThemeMenu,
@@ -170,6 +175,7 @@
 
 <Dropdown
 	appearance="primary"
+	iconbefore="menu"
 	actions={[
 		{ label: 'Optie 1', onClick: () => alert('Actie 1 uitgevoerd!') },
 		{ label: 'Optie 2', onClick: () => alert('Actie 2 uitgevoerd!') },
@@ -222,8 +228,8 @@
 	appearance="warning"
 	title="The quick brown fox"
 	actions={[
-		{ appearance: 'link', content: 'Done', href: "https://davidnet.net"},
-		{ appearance: 'link', content: 'Cancel', href: "https://davidnet.net"}
+		{ appearance: 'link', content: 'Done', href: "https://davidnet.net", onClick: () => {alert("Waah")}},
+		{ appearance: 'link', content: 'Cancel', href: "https://davidnet.net", onClick: () => {alert("Waah")}}
 	]}
 >
 	The quick brown fox jumps over the lazy dog.
@@ -233,8 +239,8 @@
 	appearance="error"
 	title="The quick brown fox"
 	actions={[
-		{ appearance: 'primary', content: 'Done', href: "https://davidnet.net" },
-		{ appearance: 'subtle', content: 'Cancel', href: "https://davidnet.net" }
+		{ appearance: 'primary', content: 'Done', href: "https://davidnet.net", onClick: () => {alert("Waah")}},
+		{ appearance: 'subtle', content: 'Cancel', href: "https://davidnet.net", onClick: () => {alert("Waah")}}
 	]}
 >
 	The quick brown fox jumps over the lazy dog.
