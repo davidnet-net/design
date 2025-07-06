@@ -170,7 +170,6 @@
 
 <Dropdown
 	appearance="primary"
-	iconbefore="menu"
 	actions={[
 		{ label: 'Optie 1', onClick: () => alert('Actie 1 uitgevoerd!') },
 		{ label: 'Optie 2', onClick: () => alert('Actie 2 uitgevoerd!') },
@@ -200,13 +199,16 @@
 <Button appearance="primary" onClick={() => showToast('top-right', 'primary')}
 	>Toast - top-right</Button
 >
-
-<br />
+<br>
 <Space height="20px" />
+<a href="/otherpage">To /otherpage</a>
+<br>
+<Space height="20px" />
+
 <h2>BlockNote</h2>
 
 <BlockNote
-	appearance="warning"
+	appearance="info"
 	title="The quick brown fox"
 	actions={[
 		{ appearance: 'primary', content: 'Done', onClick: closeModal },
@@ -228,7 +230,7 @@
 </BlockNote>
 <Space height="20px" />
 <BlockNote
-	appearance="warning"
+	appearance="error"
 	title="The quick brown fox"
 	actions={[
 		{ appearance: 'primary', content: 'Done', href: "https://davidnet.net" },

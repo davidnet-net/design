@@ -1,11 +1,11 @@
 body {
-
     font-family: Inter;
     background: var(--token-color-surface-default-normal);
     color: var(--token-color-text-default-normal);
     transition: color 500ms ease,
     background-color 500ms ease;
-
+    height: 100vh;
+    width: 100vw;
     box-sizing: border-box;
 
     /* Reset */
