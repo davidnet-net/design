@@ -1,4 +1,5 @@
 import { writable } from "svelte/store";
+import { browser } from '$app/environment';
 
 export type NavItem = {
   label: string;
@@ -12,7 +13,14 @@ const initialNavTree: NavItem[] = [
     label: "Foundations",
     collapsed: true,
     children: [
-      { label: "Colors", href: "/foundations/colors" },
+      {
+        label: "Tokens",
+        collapsed: true,
+        children: [
+          { label: "Colors", href: "/foundations/tokens/colors" },
+          { label: "Spaces", href: "/foundations/tokens/spaces" }
+        ]
+      },
       { label: "Typography", href: "/foundations/typography" }
     ]
   },
@@ -24,31 +32,40 @@ const initialNavTree: NavItem[] = [
       { label: "Test", href: "/components/test" }
     ]
   },
-  {
-    label: "Home",
-    href: "/"
-  }
+  { label: "Home", href: "/" },
+  { label: "test", href: "/test" }
 ];
 
-// Helper to persist store in localStorage
 function persistStore<T>(key: string, initialValue: T) {
-  let storedValue: T;
-  try {
-    const json = localStorage.getItem(key);
-    storedValue = json ? JSON.parse(json) : initialValue;
-  } catch {
-    storedValue = initialValue;
+  let storedValue: T = initialValue;
+
+  if (browser) {
+    const initialSerialized = JSON.stringify(initialValue);
+    const storedSerialized = localStorage.getItem(key);
+
+    if (storedSerialized !== initialSerialized) {
+      localStorage.setItem(key, initialSerialized);
+      storedValue = initialValue;
+    } else {
+      try {
+        storedValue = storedSerialized ? JSON.parse(storedSerialized) : initialValue;
+      } catch {
+        storedValue = initialValue;
+      }
+    }
   }
 
   const store = writable<T>(storedValue);
 
-  store.subscribe((val) => {
-    try {
-      localStorage.setItem(key, JSON.stringify(val));
-    } catch {
-      // ignore
-    }
-  });
+  if (browser) {
+    store.subscribe((val) => {
+      try {
+        localStorage.setItem(key, JSON.stringify(val));
+      } catch {
+        // ignore errors
+      }
+    });
+  }
 
   return store;
 }

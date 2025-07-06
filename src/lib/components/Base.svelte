@@ -132,6 +132,10 @@
 		padding: var(--token-space-3);
 		box-sizing: border-box;
 		background-color: var(--token-color-surface-default);
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 
 	/* Scrollbar styling for Firefox */
