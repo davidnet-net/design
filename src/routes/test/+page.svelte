@@ -8,9 +8,9 @@
 </svelte:head>
 
 <Base>
-    <h1 style="font-size: 200px;">Home</h1>
-    <h1 style="font-size: 200px;">Home</h1>
-    <h1 style="font-size: 200px;">Home</h1>
-    <h1 style="font-size: 200px;">Home</h1>
-    <h1 style="font-size: 200px;">Home</h1>
+    <h1 style="font-size: 200px;">TEST</h1>
+    <h1 style="font-size: 200px;">TEST</h1>
+    <h1 style="font-size: 200px;">TEST</h1>
+    <h1 style="font-size: 200px;">TEST</h1>
+    <h1 style="font-size: 200px;">TEST</h1>
 </Base>

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { IconButton, Modal, Space, ThemeMenu } from '@davidnet/svelte-ui';
+	import SideNav from '$lib/components/SideNav.svelte';
 
 	let ShowGitModal = false;
 	let ShowSideNav = true;
@@ -8,9 +9,19 @@
 <nav id="top-nav">
 	<div class="nav-left">
 		{#if ShowSideNav}
-			<IconButton appearance="subtle" icon="left_panel_close" alt="Closes sidebar" onClick={() => (ShowSideNav = false)}/>
+			<IconButton
+				appearance="subtle"
+				icon="left_panel_close"
+				alt="Closes sidebar"
+				onClick={() => (ShowSideNav = false)}
+			/>
 		{:else}
-			<IconButton appearance="subtle" icon="left_panel_open" alt="Opens sidebar" onClick={() => (ShowSideNav = true)}/>	
+			<IconButton
+				appearance="subtle"
+				icon="left_panel_open"
+				alt="Opens sidebar"
+				onClick={() => (ShowSideNav = true)}
+			/>
 		{/if}
 		<a href="https://davidnet.net">
 			<img src="/images/logos/DNLogo.png" height="35px" aria-hidden="true" alt="" />
@@ -44,9 +55,7 @@
 
 <div id="root">
 	{#if ShowSideNav}
-		<nav id="side-nav">
-			<h1>Im an side-nav</h1>
-		</nav>
+		<SideNav></SideNav>
 	{/if}
 	<main>
 		<slot />
@@ -55,7 +64,7 @@
 {#if ShowGitModal}
 	<Modal
 		title="Select a repository to visit:"
-		titleIcon="lightbulb"
+		titleIcon="fork_right"
 		hasCloseBtn={true}
 		on:close={() => (ShowGitModal = false)}
 		options={[
@@ -111,19 +120,9 @@
 
 	#root {
 		display: flex;
-		height: calc(100vh - 48px); /* full viewport minus top nav */
-		padding-top: 48px; /* so content is below fixed nav */
-		overflow: hidden; /* prevent root scroll */
-	}
-
-	#side-nav {
-		width: 250px; /* fixed width */
-		height: 100%;
-		overflow-y: auto; /* vertical scroll if needed */
-		background-color: var(--token-color-surface-overlay-normal);
-		border-right: 1px solid var(--token-color-surface-overlay-pressed);
-		padding: var(--token-space-2);
-		box-sizing: border-box;
+		height: calc(100vh - 48px);
+		padding-top: 48px;
+		overflow: hidden;
 	}
 
 	main {
@@ -135,22 +134,8 @@
 		background-color: var(--token-color-surface-default);
 	}
 
-	/* Optional: remove horizontal scrollbar if content is wider */
-	main::-webkit-scrollbar {
-		width: 8px;
-	}
-
-	#side-nav::-webkit-scrollbar {
-		width: 8px;
-	}
-
 	/* Scrollbar styling for Firefox */
 	main {
-		scrollbar-color: var(--token-color-primary) transparent;
-	}
-
-	#side-nav {
-		scrollbar-width: thin;
 		scrollbar-color: var(--token-color-primary) transparent;
 	}
 </style>
