@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Center, FlexWrapper, Space } from '@davidnet/svelte-ui';
+	import { Center, FlexPage, Space } from '@davidnet/svelte-ui';
 	import { page } from '$app/state';
 
 	// Related documentation
@@ -8,8 +8,7 @@
 </script>
 
 <div id="root">
-	<FlexWrapper>
-		<Center x y>
+	<FlexPage>
 			{#if page.status.toString() === '404'}
 				<h1>404</h1>
 				<h2>We couldn't find the page you're were looking for.</h2>
@@ -48,8 +47,7 @@
 			<a href="https://davidnet.net">Davidnet</a>
 			<Space height="var(--token-space-2)"></Space>
 			<a href="/raw">Raw</a>
-		</Center>
-	</FlexWrapper>
+	</FlexPage>
 </div>
 
 <style>

@@ -47,7 +47,7 @@
 		</a>
 		<Space width="var(--token-space-1)" />
 		<h3 class="nav-title">
-			<span class="full-text">Design system</span><span class="short-text">DS</span>
+			<span class="full-text">Design System</span><span class="short-text">DS</span>
 		</h3>
 	</div>
 
@@ -68,7 +68,9 @@
 
 <div id="root">
 	{#if ShowSideNav}
-		<SideNav />
+		<div class="sidenavroot">
+<SideNav />
+		</div>
 	{/if}
 	<main>
 		<slot />
@@ -135,12 +137,14 @@
 	#root {
 		display: flex;
 		/* CSS fallback: vh first, then dvh if supported */
-		height: calc(100vh - 48px);
-		height: calc(100dvh - 48px);
-		padding-top: 48px;
+		height: 100vh;
+		height: 100dvh;
 		overflow: hidden;
 	}
 
+	.sidenavroot {
+		padding-top:48px;
+	}
 	main {
 		flex-grow: 1;
 		height: 100%;
@@ -148,10 +152,8 @@
 		padding: var(--token-space-3);
 		box-sizing: border-box;
 		background-color: var(--token-color-surface-default);
-
-		display: flex;
-		flex-direction: column;
-		align-items: center;
+		padding: var(--token-space-0);
+		margin: var(--token-space-0);
 	}
 
 	/* Scrollbar styling for Firefox */

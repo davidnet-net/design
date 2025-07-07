@@ -75,10 +75,10 @@
 					>
 						{item.label}
 					</Button>
-				{:else if item.href} <!--! Do PRIMARY bij de eerste voor normale ding -->
+				{:else if item.href}
 					<LinkButton
 						href={item.href}
-						appearance={item.href === currentPath ? 'subtle' : 'subtle'} 
+						appearance={item.href === currentPath ? 'primary' : 'subtle'} 
 						justifycontent="start"
 						stretchwidth
 						overidetextcolor={item.href === currentPath

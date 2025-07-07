@@ -9,6 +9,8 @@ export type NavItem = {
 };
 
 const initialNavTree: NavItem[] = [
+  { label: "Home", href: "/" },
+  { label: "Get started", href: "/get-started" },
   {
     label: "Foundations",
     collapsed: true,
@@ -31,9 +33,7 @@ const initialNavTree: NavItem[] = [
       { label: "Buttons", href: "/" },
       { label: "Test", href: "/" }
     ]
-  },
-  { label: "Home", href: "/" },
-  { label: "test", href: "/" }
+  }
 ];
 
 function persistStore<T>(key: string, initialValue: T) {

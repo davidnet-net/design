@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-	<title>Davidnet - Design system</title>
+	<title>Davidnet - Design System</title>
 	<meta name="description" content="Explains how to use the building blocks for davidnet's advanced UI." />
 </svelte:head>
 
