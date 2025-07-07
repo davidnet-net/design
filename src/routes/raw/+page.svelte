@@ -15,7 +15,8 @@
 		Space,
 		Dropdown,
 		toast,
-		BlockNote
+		BlockNote,
+		IconDropdown
 	} from '@davidnet/svelte-ui';
 	let showModal = false;
 
@@ -48,6 +49,14 @@
 			position: Pos,
 			autoDismiss: 3000
 		});
+	}
+
+	function onAction1() {
+		alert("Action 1 triggered");
+	}
+
+	function onAction2() {
+		alert("Action 2 triggered");
 	}
 </script>
 
@@ -185,6 +194,18 @@
 			{ label: 'Optie 3', onClick: () => alert('Optie 3!') }
 		]}>Dropdown</Dropdown
 	>
+
+	<IconDropdown
+		appearance="primary"
+		icon="settings"
+		alt="Settings menu"
+		actions={[
+			{ label: "Action 1", onClick: onAction1 },
+			{ label: "Action 2", onClick: onAction2 },
+			{ label: "Logout", onClick: () => alert("Logged out") },
+		]}
+	/>
+
 
 	<br />
 	<Space height="50px" />
