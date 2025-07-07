@@ -4,7 +4,7 @@
 
 <svelte:head>
 	<title>Davidnet - Design system</title>
-	<meta name="description" content="Displays all elements on a raw page." />
+	<meta name="description" content="Explains how to use the building blocks for davidnet's advanced UI." />
 </svelte:head>
 
 <Base>
