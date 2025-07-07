@@ -4,9 +4,9 @@
 	"version": "0.0.1",
 	"type": "module",
 	"repository": {
-        "type": "git",
-        "url": "git+https://github.com/davidnet-net/design.git"
-    },
+		"type": "git",
+		"url": "git+https://github.com/davidnet-net/design.git"
+	},
 	"scripts": {
 		"dev": "npm run genmetadata && vite dev --host",
 		"build": "npm run genmetadata && vite build",
