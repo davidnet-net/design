@@ -17,23 +17,23 @@ const initialNavTree: NavItem[] = [
         label: "Tokens",
         collapsed: true,
         children: [
-          { label: "Colors", href: "/foundations/tokens/colors" },
-          { label: "Spaces", href: "/foundations/tokens/spaces" }
+          { label: "Colors", href: "/" },
+          { label: "Spaces", href: "/" }
         ]
       },
-      { label: "Typography", href: "/foundations/typography" }
+      { label: "Typography", href: "/" }
     ]
   },
   {
     label: "Components",
     collapsed: true,
     children: [
-      { label: "Buttons", href: "/components/buttons" },
-      { label: "Test", href: "/components/test" }
+      { label: "Buttons", href: "/" },
+      { label: "Test", href: "/" }
     ]
   },
   { label: "Home", href: "/" },
-  { label: "test", href: "/test" }
+  { label: "test", href: "/" }
 ];
 
 function persistStore<T>(key: string, initialValue: T) {

@@ -1,9 +1,16 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { IconButton, Modal, Space, ThemeMenu } from '@davidnet/svelte-ui';
 	import SideNav from '$lib/components/SideNav.svelte';
 
 	let ShowGitModal = false;
 	let ShowSideNav = true;
+
+	onMount(() => {
+		if (window.innerWidth < 750) {
+			ShowSideNav = false;
+		}
+	});
 </script>
 
 <nav id="top-nav">
@@ -78,18 +85,18 @@
 			{
 				appearance: 'primary',
 				content: 'Design website',
-				onClick: () => (window.location.href = 'https://github.com/davidnet-net/design'),
+				onClick: () => (window.location.href = 'https://github.com/davidnet-net/design')
 			},
 			{
 				appearance: 'primary',
 				content: 'Design Libary',
-				onClick: () => (window.location.href = 'https://github.com/davidnet-net/svelte-ui'),
+				onClick: () => (window.location.href = 'https://github.com/davidnet-net/svelte-ui')
 			},
 			{
 				appearance: 'subtle',
 				content: 'Davidnet Organisation',
-				onClick: () => (window.location.href = 'https://github.com/davidnet-net/'),
-			},
+				onClick: () => (window.location.href = 'https://github.com/davidnet-net/')
+			}
 		]}
 	/>
 {/if}
@@ -156,7 +163,9 @@
 		display: flex;
 		align-items: center;
 		gap: 0.15em;
-		font-family: Merriweather Sans, sans-serif;
+		font-family:
+			Merriweather Sans,
+			sans-serif;
 		white-space: nowrap;
 		margin: 0;
 	}
