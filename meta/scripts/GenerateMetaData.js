@@ -1,4 +1,4 @@
-import { writeFileSync } from 'fs';
+import { readFileSync, existsSync, writeFileSync } from 'fs';
 import path from 'path';
 import { execSync } from 'child_process';
 
@@ -11,25 +11,47 @@ function getGitInfo() {
 
     let commitUrl = '';
     try {
-      const pkg = JSON.parse(readFileSync('package.json', 'utf-8'));
-      if (pkg.repository?.url) {
-        const repoUrl = pkg.repository.url
-          .replace(/^git\+/, '')
-          .replace(/\.git$/, '');
-        commitUrl = `${repoUrl}/commit/${fullCommitHash}`;
+      const pkgPath = path.resolve(process.cwd(), 'package.json');
+
+      if (!existsSync(pkgPath)) {
+        throw new Error('package.json not found at expected location');
       }
-    } catch {
-      // Ignore if package.json doesn't have repository info
+
+      const pkg = JSON.parse(readFileSync(pkgPath, 'utf-8'));
+
+      if (pkg.repository?.url) {
+        let repoUrl = pkg.repository.url;
+
+        if (repoUrl.startsWith('git+')) {
+          repoUrl = repoUrl.slice(4);
+        }
+        if (repoUrl.endsWith('.git')) {
+          repoUrl = repoUrl.slice(0, -4);
+        }
+        if (repoUrl.startsWith('git@')) {
+          const match = repoUrl.match(/^git@(.*):(.*)\/(.*)$/);
+          if (match) {
+            repoUrl = `https://${match[1]}/${match[2]}/${match[3]}`;
+          }
+        }
+
+        commitUrl = `${repoUrl}/commit/${fullCommitHash}`;
+      } else {
+        console.warn('Warning: repository.url not found in package.json');
+      }
+    } catch (err) {
+      console.error('Error reading package.json or generating commitUrl:', err);
     }
 
     return { fullCommitHash, shortCommitHash, commitDate, branch, commitUrl };
-  } catch {
+  } catch (err) {
+    console.error('Error fetching Git info:', err);
     return {
       fullCommitHash: 'unknown',
       shortCommitHash: 'unknown',
       commitDate: 'unknown',
       branch: 'unknown',
-      commitUrl: '',
+      commitUrl: 'unknown',
     };
   }
 }
@@ -50,4 +72,4 @@ export const metadata = {
 const outputPath = path.resolve('src/lib/metadata.ts');
 writeFileSync(outputPath, content);
 
-console.log(`✅ Generated metadata.ts`);
+console.log(`✅ Generated metadata.ts at ${outputPath}`);

@@ -26,20 +26,20 @@
 		<a href="https://davidnet.net">
 			<img src="/images/logos/DNLogo.png" height="35px" aria-hidden="true" alt="" />
 		</a>
-		<h3 style="font-family: Merriweather Sans; color: #d52129;">
+		<h3 class="nav-title red">
 			<span class="full-text">David</span><span class="short-text">DN</span>
 		</h3>
-		<h3 style="font-family: Merriweather Sans; color: #2985cd;">
+		<h3 class="nav-title blue">
 			<span class="full-text">net</span><span class="short-text">&nbsp;</span>
 		</h3>
 		<Space width="var(--token-space-2)" />
-		<h3 style="font-family: Merriweather Sans;">-</h3>
+		<h3 class="nav-title">-</h3>
 		<Space width="var(--token-space-2)" />
 		<a href="/">
 			<img src="/images/logos/svelte-ui.png" height="30px" aria-hidden="true" alt="" />
 		</a>
 		<Space width="var(--token-space-1)" />
-		<h3 style="font-family: Merriweather Sans;">
+		<h3 class="nav-title">
 			<span class="full-text">Design system</span><span class="short-text">DS</span>
 		</h3>
 	</div>
@@ -61,7 +61,7 @@
 
 <div id="root">
 	{#if ShowSideNav}
-		<SideNav></SideNav>
+		<SideNav />
 	{/if}
 	<main>
 		<slot />
@@ -78,18 +78,18 @@
 			{
 				appearance: 'primary',
 				content: 'Design website',
-				onClick: () => (window.location.href = 'https://github.com/davidnet-net/design')
+				onClick: () => (window.location.href = 'https://github.com/davidnet-net/design'),
 			},
 			{
 				appearance: 'primary',
 				content: 'Design Libary',
-				onClick: () => (window.location.href = 'https://github.com/davidnet-net/svelte-ui')
+				onClick: () => (window.location.href = 'https://github.com/davidnet-net/svelte-ui'),
 			},
 			{
 				appearance: 'subtle',
 				content: 'Davidnet Organisation',
-				onClick: () => (window.location.href = 'https://github.com/davidnet-net/')
-			}
+				onClick: () => (window.location.href = 'https://github.com/davidnet-net/'),
+			},
 		]}
 	/>
 {/if}
@@ -152,6 +152,23 @@
 		scrollbar-color: var(--token-color-primary) transparent;
 	}
 
+	.nav-title {
+		display: flex;
+		align-items: center;
+		gap: 0.15em;
+		font-family: Merriweather Sans, sans-serif;
+		white-space: nowrap;
+		margin: 0;
+	}
+
+	.nav-title.red {
+		color: #d52129;
+	}
+
+	.nav-title.blue {
+		color: #2985cd;
+	}
+
 	/* Full text visible by default, short text hidden */
 	.full-text {
 		display: inline;
@@ -163,10 +180,10 @@
 	/* On smaller screens, swap visibility */
 	@media (max-width: 500px) {
 		.full-text {
-			display: none;
+			display: none !important;
 		}
 		.short-text {
-			display: inline;
+			display: inline !important;
 		}
 	}
 </style>
