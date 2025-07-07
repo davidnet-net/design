@@ -210,7 +210,6 @@
 	>
 	<br />
 	<Space height="20px" />
-	<a href="/otherpage">To /otherpage</a>
 	<br />
 	<Space height="20px" />
 
