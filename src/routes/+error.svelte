@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Center, FlexPage, Space } from '@davidnet/svelte-ui';
+	import { FlexPage, Space } from '@davidnet/svelte-ui';
 	import { page } from '$app/state';
 
 	// Related documentation
