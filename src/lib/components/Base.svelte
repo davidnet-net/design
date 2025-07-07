@@ -2,34 +2,29 @@
 	import { onMount } from 'svelte';
 	import { IconButton, Modal, Space, ThemeMenu } from '@davidnet/svelte-ui';
 	import SideNav from '$lib/components/SideNav.svelte';
-
+	import { sidenavOpen } from '$lib/stores/sidenavOpen';
 	let ShowGitModal = false;
-	let ShowSideNav = true;
 
-	onMount(() => {
-		if (window.innerWidth < 750) {
-			ShowSideNav = false;
-		}
-	});
 </script>
 
 <nav id="top-nav">
 	<div class="nav-left">
-		{#if ShowSideNav}
+		{#if $sidenavOpen}
 			<IconButton
 				appearance="subtle"
 				icon="left_panel_close"
 				alt="Closes sidebar"
-				onClick={() => (ShowSideNav = false)}
+				onClick={() => sidenavOpen.set(false)}
 			/>
 		{:else}
 			<IconButton
 				appearance="subtle"
 				icon="left_panel_open"
 				alt="Opens sidebar"
-				onClick={() => (ShowSideNav = true)}
+				onClick={() => sidenavOpen.set(true)}
 			/>
 		{/if}
+
 		<a href="https://davidnet.net">
 			<img src="/images/logos/DNLogo.png" height="35px" aria-hidden="true" alt="" />
 		</a>
@@ -67,11 +62,12 @@
 </nav>
 
 <div id="root">
-	{#if ShowSideNav}
+	{#if $sidenavOpen}
 		<div class="sidenavroot">
-<SideNav />
+			<SideNav />
 		</div>
 	{/if}
+
 	<main>
 		<slot />
 	</main>
