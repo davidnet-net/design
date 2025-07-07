@@ -5,10 +5,7 @@
 
 <svelte:head>
 	<title>Get started - Davidnet Design System</title>
-	<meta
-		name="description"
-		content="Explains how to use the building blocks for davidnet's advanced UI."
-	/>
+	<meta name="description" content="Explains how to integrate Davidnet's Design System. In your sveltekit project."/>
 </svelte:head>
 
 <Base>
@@ -18,7 +15,7 @@
 			<FlexWrapper direction="row" gap="var(--token-space-6)" width="100%">
 				<div class="topheader">
 					<h1>Get started</h1>
-					The basics of the Davidnet Design System.
+					Explains how to integrate Davidnet's Design System. <br>In your sveltekit project.
 				</div>
 				<img
 					class="topimage"
@@ -79,6 +76,7 @@
 
 	.topheader {
 		max-width: 50%;
+		line-height: 1.3;
 	}
 
 	.topimage {
