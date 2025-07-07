@@ -10,7 +10,7 @@ export type NavItem = {
 
 const initialNavTree: NavItem[] = [
   { label: "Home", href: "/" },
-  { label: "Get started", href: "/get-started" },
+  { label: "Get started", href: "/get-started/" },
   {
     label: "Foundations",
     collapsed: true,
