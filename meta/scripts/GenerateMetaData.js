@@ -1,6 +1,7 @@
 import { readFileSync, existsSync, writeFileSync } from 'fs';
 import path from 'path';
 import { execSync } from 'child_process';
+let repoUrl = '';
 
 function getGitInfo() {
   try {
@@ -20,7 +21,7 @@ function getGitInfo() {
       const pkg = JSON.parse(readFileSync(pkgPath, 'utf-8'));
 
       if (pkg.repository?.url) {
-        let repoUrl = pkg.repository.url;
+        repoUrl = pkg.repository.url;
 
         if (repoUrl.startsWith('git+')) {
           repoUrl = repoUrl.slice(4);
@@ -65,7 +66,8 @@ export const metadata = {
   fullCommitHash: "${gitInfo.fullCommitHash}",
   commitDate: "${gitInfo.commitDate}",
   branch: "${gitInfo.branch}",
-  commitUrl: "${gitInfo.commitUrl}"
+  commitUrl: "${gitInfo.commitUrl}",
+  repoUrl: "${repoUrl}"
 };
 `;
 

@@ -2,7 +2,7 @@
 	import { Button, LinkButton, Space, metadata as svelteui_metadata} from '@davidnet/svelte-ui';
 	import { navTree, selectedHref, type NavItem } from '$lib/stores/sidenav';
 	import { metadata } from '$lib/metadata'
-  import { page } from '$app/stores';
+  	import { page } from '$app/stores';
 
 	$: currentPath = $page.url.pathname;
 
@@ -100,7 +100,7 @@
 	<div id="bottom-info">
 		<div id="design-info">
 			<div>
-				<a class="topurl" target="_blank" href="https://design.davidnet.net">design.davidnet.net</a>
+				<a class="topurl" target="_blank" href="{metadata.repoUrl}">design.davidnet.net</a>
 			</div>
 			<br />
 			<div class="data">
@@ -116,7 +116,7 @@
 		<br />
 		<div id="svelte-ui-info">
 			<div>
-				<a class="topurl" target="_blank" href="{svelteui_metadata.npmUrl}/v/{svelteui_metadata.version}"
+				<a class="topurl" target="_blank" href="{svelteui_metadata.repoUrl}"
 					>@davidnet/svelte-ui</a
 				>
 			</div>
