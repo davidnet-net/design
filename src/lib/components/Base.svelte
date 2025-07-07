@@ -121,7 +121,7 @@
 
 	#root {
 		display: flex;
-		height: calc(100vh - 48px);
+		height: calc(100dvh - 48px);
 		padding-top: 48px;
 		overflow: hidden;
 	}
