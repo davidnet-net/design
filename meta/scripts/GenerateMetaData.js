@@ -1,19 +1,6 @@
-import { readFileSync, writeFileSync } from 'fs';
+import { writeFileSync } from 'fs';
 import path from 'path';
 import { execSync } from 'child_process';
-
-const pkg = JSON.parse(readFileSync('package.json', 'utf-8'));
-
-let repoUrl = '';
-if (pkg.repository && pkg.repository.url) {
-  repoUrl = pkg.repository.url
-    .replace(/^git\+/, '')
-    .replace(/\.git$/, '');
-} else {
-  console.warn('repository.url not found in package.json');
-  console.warn('package.json not yapping the required info.');
-}
-
 
 function getGitInfo() {
   try {
@@ -22,11 +9,28 @@ function getGitInfo() {
     const commitDate = execSync('git log -1 --format=%cI').toString().trim();
     const branch = execSync('git rev-parse --abbrev-ref HEAD').toString().trim();
 
-    const commitUrl = repoUrl ? `${repoUrl}/commit/${fullCommitHash}` : '';
+    let commitUrl = '';
+    try {
+      const pkg = JSON.parse(readFileSync('package.json', 'utf-8'));
+      if (pkg.repository?.url) {
+        const repoUrl = pkg.repository.url
+          .replace(/^git\+/, '')
+          .replace(/\.git$/, '');
+        commitUrl = `${repoUrl}/commit/${fullCommitHash}`;
+      }
+    } catch {
+      // Ignore if package.json doesn't have repository info
+    }
 
     return { fullCommitHash, shortCommitHash, commitDate, branch, commitUrl };
-  } catch (e) {
-    return { fullCommitHash: 'unknown', shortCommitHash: 'unknown', commitDate: 'unknown', branch: 'unknown', commitUrl: '' };
+  } catch {
+    return {
+      fullCommitHash: 'unknown',
+      shortCommitHash: 'unknown',
+      commitDate: 'unknown',
+      branch: 'unknown',
+      commitUrl: '',
+    };
   }
 }
 
