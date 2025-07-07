@@ -1,0 +1,32 @@
+(SERVER)
+sudo adduser --disabled-password --gecos "" deployweb
+sudo chown -R deployweb:www-data /var/www
+sudo chmod -R 775 /var/www
+
+(HOST)
+ssh-keygen -t ed25519 -C "github-actions" -f deploy-key
+[No Password!]
+cat deploy-key.pub
+
+(SERVER)
+sudo mkdir -p /home/deployweb/.ssh
+sudo micro /home/deployweb/.ssh/authorized_keys
+[Paste full cat here]
+
+sudo chown -R deployweb:deployweb /home/deployweb/.ssh
+sudo chmod 700 /home/deployweb/.ssh
+sudo chmod 600 /home/deployweb/.ssh/authorized_keys
+
+sudo chsh -s /usr/sbin/nologin deployweb
+
+(HOST)
+cat deploy-key
+
+[Paste into github]
+secrets.DEPLOY_KEY 
+
+(SERVER)
+sudo apt update
+sudo apt install rsync
+
+[RSYNC is required on the server to use rsync]
