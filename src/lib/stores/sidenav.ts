@@ -3,54 +3,60 @@ import { browser } from '$app/environment';
 
 export type NavItem = {
   label: string;
-  collapsed?: boolean;
+  collapsed: boolean;         // niet optioneel, altijd boolean
   href?: string;
   children?: NavItem[];
+  navigateOnToggle?: boolean; // nieuw, default false
 };
 
 const initialNavTree: NavItem[] = [
-  { label: "Home", href: "/" },
-  { label: "Get started", href: "/get-started/" },
+  { label: "Home", collapsed: false, href: "/" },
+  { label: "Get started", collapsed: false, href: "/get-started/" },
   {
     label: "Foundations",
     collapsed: true,
+    href: "/foundations",
     children: [
       {
         label: "Tokens",
         collapsed: true,
         children: [
-          { label: "Colors", href: "/" },
-          { label: "Spaces", href: "/" }
+          { label: "Colors", collapsed: false, href: "/" },
+          { label: "Spaces", collapsed: false, href: "/" }
         ]
       },
-      { label: "Typography", href: "/" }
+      { label: "Typography", collapsed: false, href: "/" }
     ]
   },
   {
     label: "Components",
     collapsed: true,
     children: [
-      { label: "Buttons", href: "/" },
-      { label: "Test", href: "/" }
+      { label: "Buttons", collapsed: false, href: "/" },
+      { label: "Test", collapsed: false, href: "/" }
     ]
   }
 ];
 
-function persistStore<T>(key: string, initialValue: T) {
+type WithTimestamp<T> = {
+  value: T;
+  timestamp: number;
+};
+
+function persistStore<T>(key: string, initialValue: T, maxAgeMs = 24 * 60 * 60 * 1000) {
   let storedValue: T = initialValue;
 
   if (browser) {
-    const initialSerialized = JSON.stringify(initialValue);
-    const storedSerialized = localStorage.getItem(key);
-
-    if (storedSerialized !== initialSerialized) {
-      localStorage.setItem(key, initialSerialized);
-      storedValue = initialValue;
-    } else {
+    const raw = localStorage.getItem(key);
+    if (raw) {
       try {
-        storedValue = storedSerialized ? JSON.parse(storedSerialized) : initialValue;
+        const parsed: WithTimestamp<T> = JSON.parse(raw);
+        const age = Date.now() - parsed.timestamp;
+        if (age <= maxAgeMs) {
+          storedValue = parsed.value;
+        }
       } catch {
-        storedValue = initialValue;
+        // malformed → ignore
       }
     }
   }
@@ -60,7 +66,11 @@ function persistStore<T>(key: string, initialValue: T) {
   if (browser) {
     store.subscribe((val) => {
       try {
-        localStorage.setItem(key, JSON.stringify(val));
+        const toSave: WithTimestamp<T> = {
+          value: val,
+          timestamp: Date.now()
+        };
+        localStorage.setItem(key, JSON.stringify(toSave));
       } catch {
         // ignore errors
       }
