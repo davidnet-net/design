@@ -178,7 +178,7 @@
 	}
 
 	/* On smaller screens, swap visibility */
-	@media (max-width: 500px) {
+	@media (max-width: 750px) {
 		.full-text {
 			display: none !important;
 		}
