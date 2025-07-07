@@ -2,6 +2,7 @@
 	import { IconButton, Modal, Space, ThemeMenu } from '@davidnet/svelte-ui';
 	import SideNav from '$lib/components/SideNav.svelte';
 
+
 	let ShowGitModal = false;
 	let ShowSideNav = true;
 </script>
