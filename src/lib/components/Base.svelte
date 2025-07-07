@@ -46,8 +46,8 @@
 	<div class="nav-right">
 		<ThemeMenu />
 		<IconButton
-			icon="http://192.168.2.5:5173/images/logos/external/github/github-mark-dark.svg"
-			lighticon="http://192.168.2.5:5173/images/logos/external/github/github-mark-white.svg"
+			icon="https://design.davidnet.net/images/logos/external/github/github-mark-dark.svg"
+			lighticon="https://design.davidnet.net/images/logos/external/github/github-mark-white.svg"
 			alt="Github Repository"
 			onClick={() => (ShowGitModal = true)}
 		/>

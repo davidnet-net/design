@@ -27,11 +27,9 @@ jobs:
       - name: Build site
         run: npm run build
 
-      - name: Upload via SSH
-        uses: appleboy/scp-action@v0.1.4
-        with:
-          host: ${{ secrets.DEPLOY_HOST }}
-          username: ${{ secrets.DEPLOY_USER }}
-          key: ${{ secrets.DEPLOY_KEY }}
-          source: build/
-          target: ${{ env.DEPLOY_PATH }}
+      - name: Upload via rsync over SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.DEPLOY_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          rsync -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no" -avz --delete build/ ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:${{ env.DEPLOY_PATH }}
