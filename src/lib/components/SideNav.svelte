@@ -75,17 +75,16 @@
 					>
 						{item.label}
 					</Button>
-				{:else if item.href}
+				{:else if item.href} <!--! Do PRIMARY bij de eerste voor normale ding -->
 					<LinkButton
 						href={item.href}
-						appearance={item.href === currentPath ? 'primary' : 'subtle'}
+						appearance={item.href === currentPath ? 'subtle' : 'subtle'} 
 						justifycontent="start"
 						stretchwidth
 						overidetextcolor={item.href === currentPath
 							? undefined
 							: 'var(--token-color-text-default-tertiary)'}
 						on:click={() => selectLink(item.href)}
-						class="nav-link-button"
 					>
 						{item.label}
 					</LinkButton>
