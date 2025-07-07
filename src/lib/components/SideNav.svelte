@@ -134,6 +134,7 @@
 	#sidebar-container {
 		display: flex;
 		flex-direction: column;
+		height: calc(100vh - 48px);
 		height: calc(100dvh - 48px);
 		width: fit-content;
 		background: var(--token-color-surface-overlay-normal);

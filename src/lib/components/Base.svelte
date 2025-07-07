@@ -2,7 +2,6 @@
 	import { IconButton, Modal, Space, ThemeMenu } from '@davidnet/svelte-ui';
 	import SideNav from '$lib/components/SideNav.svelte';
 
-
 	let ShowGitModal = false;
 	let ShowSideNav = true;
 </script>
@@ -27,8 +26,12 @@
 		<a href="https://davidnet.net">
 			<img src="/images/logos/DNLogo.png" height="35px" aria-hidden="true" alt="" />
 		</a>
-		<h3 style="font-family: Merriweather Sans; color: #d52129;">David</h3>
-		<h3 style="font-family: Merriweather Sans; color: #2985cd;">net</h3>
+		<h3 style="font-family: Merriweather Sans; color: #d52129;">
+			<span class="full-text">David</span><span class="short-text">DN</span>
+		</h3>
+		<h3 style="font-family: Merriweather Sans; color: #2985cd;">
+			<span class="full-text">net</span><span class="short-text">&nbsp;</span>
+		</h3>
 		<Space width="var(--token-space-2)" />
 		<h3 style="font-family: Merriweather Sans;">-</h3>
 		<Space width="var(--token-space-2)" />
@@ -36,7 +39,9 @@
 			<img src="/images/logos/svelte-ui.png" height="30px" aria-hidden="true" alt="" />
 		</a>
 		<Space width="var(--token-space-1)" />
-		<h3 style="font-family: Merriweather Sans;">Design system</h3>
+		<h3 style="font-family: Merriweather Sans;">
+			<span class="full-text">Design system</span><span class="short-text">DS</span>
+		</h3>
 	</div>
 
 	<div class="nav-center">
@@ -62,6 +67,7 @@
 		<slot />
 	</main>
 </div>
+
 {#if ShowGitModal}
 	<Modal
 		title="Select a repository to visit:"
@@ -121,6 +127,8 @@
 
 	#root {
 		display: flex;
+		/* CSS fallback: vh first, then dvh if supported */
+		height: calc(100vh - 48px);
 		height: calc(100dvh - 48px);
 		padding-top: 48px;
 		overflow: hidden;
@@ -142,5 +150,23 @@
 	/* Scrollbar styling for Firefox */
 	main {
 		scrollbar-color: var(--token-color-primary) transparent;
+	}
+
+	/* Full text visible by default, short text hidden */
+	.full-text {
+		display: inline;
+	}
+	.short-text {
+		display: none;
+	}
+
+	/* On smaller screens, swap visibility */
+	@media (max-width: 500px) {
+		.full-text {
+			display: none;
+		}
+		.short-text {
+			display: inline;
+		}
 	}
 </style>
