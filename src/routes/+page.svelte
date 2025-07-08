@@ -12,9 +12,11 @@
 </svelte:head>
 
 <Base>
-	<Space height="var(--token-space-6)"></Space>
 	<div class="header">
 		<FlexWrapper direction="column" width="100%" height="300px">
+			<Space height="var(--token-space-6)"></Space>
+			<Space height="var(--token-space-6)"></Space>
+			<Space height="var(--token-space-3)"></Space>
 			<FlexWrapper direction="row" gap="var(--token-space-6)" width="100%">
 				<div class="topheader">
 					<h1>Svelte-UI</h1>
@@ -32,16 +34,21 @@
 	</div>
 	<main>
 		<h2>Foundations</h2>
-		<FlexWrapper width="100%">
-			<div>
+		<FlexWrapper width="100%" justifycontent="start" direction="row" gap="var(--token-space-3)">
 				<ImageCard
-					src="/images/test.svg"
-					alt="Sample image"
-					title="Exciting Title"
-					description="A short but compelling description goes here."
-					href="/foundations/"
+					src="/images/cards/Tokens.svg"
+					alt=""
+					title="Tokens"
+					description="Tokens make it easy to make design consistent."
+					href="/"
 				/>
-			</div>
+				<ImageCard
+					src="/images/cards/Accessibility.svg"
+					alt=""
+					title="Accessibility"
+					description="Designing with accessibility in mind lets everyone use Davidnet."
+					href="/"
+				/>
 		</FlexWrapper>
 	</main>
 </Base>
