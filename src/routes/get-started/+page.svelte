@@ -5,7 +5,10 @@
 
 <svelte:head>
 	<title>Get started - Davidnet Design System</title>
-	<meta name="description" content="Explains how to integrate Davidnet's Design System. In your sveltekit project."/>
+	<meta
+		name="description"
+		content="Explains how to integrate Davidnet's Design System. In your sveltekit project."
+	/>
 </svelte:head>
 
 <Base>
@@ -15,7 +18,7 @@
 			<FlexWrapper direction="row" gap="var(--token-space-6)" width="100%">
 				<div class="topheader">
 					<h1>Get started</h1>
-					Explains how to integrate Davidnet's Design System. <br>In your sveltekit project.
+					Explains how to integrate Davidnet's Design System.<br />In your sveltekit project.
 				</div>
 				<img
 					class="topimage"
@@ -27,14 +30,14 @@
 			</FlexWrapper>
 		</FlexWrapper>
 	</div>
-	<div id="root">
+	<main>
 		<h2 class="nospacing">Prerequisites</h2>
 		<p><a href="https://svelte.dev/">Sveltekit</a> ^5.0.0 project</p>
 		<p><a href="https://nodejs.org">NodeJS</a> ^20.18.0</p>
 		<p><a href="https://npmjs.com">NPM</a> ^9.2.0</p>
 		<h2>Installation</h2>
 		<BlockNote appearance="info" title="Notice">
-			Do the following in an sveltekit 5 project. <br> Create one using: npx sv create.
+			Do the following in an sveltekit 5 project. <br /> Create one using: npx sv create.
 		</BlockNote>
 		<Space height="var(--token-space-4)"></Space>
 		<h3 class="nospacing">Step 1</h3>
@@ -42,7 +45,7 @@
 		<CodeBlock language="ts" code={`npm install @davidnet/svelte-ui`} />
 		<h3 class="nospacing-below">Step 2</h3>
 		<p>Include the root styling in your app.html.</p>
-		<CodeBlock language="html" code={`<link rel="stylesheet" href="/global.css">`} />
+		<CodeBlock language="html" code={`<link rel="stylesheet" href="https://design.davidnet.net/global.css">`} />
 		<h3 class="nospacing-below">Step 3</h3>
 		<p>Include core components in your +layout.svelte.</p>
 		<CodeBlock
@@ -58,7 +61,7 @@
 <slot />`}
 		/>
 		<p>You are now ready to start using Davidnet Design System.</p>
-	</div>
+	</main>
 </Base>
 
 <style>
@@ -66,7 +69,7 @@
 		background-color: var(--token-color-surface-sunken-normal);
 	}
 
-	#root {
+	main {
 		padding: var(--token-space-6);
 	}
 
