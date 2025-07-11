@@ -15,25 +15,9 @@ const initialNavTree: NavItem[] = [
   {
     label: "Foundations",
     collapsed: true,
-    href: "/foundations",
     children: [
-      {
-        label: "Tokens",
-        collapsed: true,
-        children: [
-          { label: "Colors", collapsed: false, href: "/" },
-          { label: "Spaces", collapsed: false, href: "/" }
-        ]
-      },
-      { label: "Typography", collapsed: false, href: "/" }
-    ]
-  },
-  {
-    label: "Components",
-    collapsed: true,
-    children: [
-      { label: "Buttons", collapsed: false, href: "/" },
-      { label: "Test", collapsed: false, href: "/" }
+      { label: "Tokens", collapsed: false, href: "/foundations/tokens" },
+      { label: "Accessibility", collapsed: false, href: "/foundations/accessibility" }
     ]
   }
 ];
