@@ -40,14 +40,14 @@
 					alt=""
 					title="Tokens"
 					description="Tokens make it easy to make design consistent."
-					href="/"
+					href="/foundations/tokens/"
 				/>
 				<ImageCard
 					src="/images/cards/Accessibility.svg"
 					alt=""
 					title="Accessibility"
 					description="Designing with accessibility in mind lets everyone use Davidnet."
-					href="/"
+					href="/foundations/accessibility/"
 				/>
 		</FlexWrapper>
 	</main>
