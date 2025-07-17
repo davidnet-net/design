@@ -36,18 +36,28 @@
 		<h2>Foundations</h2>
 		<FlexWrapper width="100%" justifycontent="start" direction="row" gap="var(--token-space-3)">
 				<ImageCard
-					src="/images/cards/Tokens.svg"
+					src="/images/cards/tokens.svg"
 					alt=""
 					title="Tokens"
 					description="Tokens make it easy to make design consistent."
 					href="/foundations/tokens/"
 				/>
 				<ImageCard
-					src="/images/cards/Accessibility.svg"
+					src="/images/cards/accessibility.svg"
 					alt=""
 					title="Accessibility"
 					description="Designing with accessibility in mind lets everyone use Davidnet."
 					href="/foundations/accessibility/"
+				/>
+		</FlexWrapper>
+		<h2>Components</h2>
+		<FlexWrapper width="100%" justifycontent="start" direction="row" gap="var(--token-space-3)">
+				<ImageCard
+					src="/images/cards/button.svg"
+					alt=""
+					title="Buttons"
+					description="A button triggers an event or action. Its the base of interactivity."
+					href="/components/button/"
 				/>
 		</FlexWrapper>
 	</main>

@@ -1,9 +1,9 @@
 import { writable } from "svelte/store";
-import { browser } from '$app/environment';
+import { browser } from "$app/environment";
 
 export type NavItem = {
   label: string;
-  collapsed: boolean;         // niet optioneel, altijd boolean
+  collapsed: boolean; // niet optioneel, altijd boolean
   href?: string;
   children?: NavItem[];
   navigateOnToggle?: boolean; // nieuw, default false
@@ -16,10 +16,28 @@ const initialNavTree: NavItem[] = [
     label: "Foundations",
     collapsed: true,
     children: [
-      { label: "Tokens", collapsed: false, href: "/foundations/tokens" },
-      { label: "Accessibility", collapsed: false, href: "/foundations/accessibility" }
-    ]
-  }
+      { label: "Tokens", collapsed: false, href: "/foundations/tokens/" },
+      {
+        label: "Accessibility",
+        collapsed: false,
+        href: "/foundations/accessibility/",
+      },
+    ],
+  },
+  {
+    label: "Components",
+    collapsed: true,
+    children: [
+      {
+        label: "Buttons",
+        collapsed: true,
+        children: [
+          { label: "Button", collapsed: false, href: "/components/button/" },
+        ],
+      },
+      { label: "huh", collapsed: false, href: "/components/huh/" },
+    ],
+  },
 ];
 
 type WithTimestamp<T> = {
@@ -27,7 +45,11 @@ type WithTimestamp<T> = {
   timestamp: number;
 };
 
-function persistStore<T>(key: string, initialValue: T, maxAgeMs = 24 * 60 * 60 * 1000) {
+function persistStore<T>(
+  key: string,
+  initialValue: T,
+  maxAgeMs = 24 * 60 * 60 * 1000,
+) {
   let storedValue: T = initialValue;
 
   if (browser) {
@@ -52,7 +74,7 @@ function persistStore<T>(key: string, initialValue: T, maxAgeMs = 24 * 60 * 60 *
       try {
         const toSave: WithTimestamp<T> = {
           value: val,
-          timestamp: Date.now()
+          timestamp: Date.now(),
         };
         localStorage.setItem(key, JSON.stringify(toSave));
       } catch {
