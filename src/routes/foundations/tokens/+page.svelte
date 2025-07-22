@@ -17,20 +17,13 @@
 					<h1>Tokens</h1>
 					Tokens make it easy to make design consistent.
 				</div>
-				<img
-					class="topimage"
-					src="/images/headers/tokens.png"
-					height="300px"
-					aria-hidden="true"
-					alt=""
-				/>
+				<img class="topimage" src="/images/headers/tokens.png" height="300px" aria-hidden="true" alt="" />
 			</FlexWrapper>
 		</FlexWrapper>
 	</div>
 	<main>
-		Tokens are essential for maintaining design consistency. <br /> They leverage CSS variables
-		to enable easy theming across projects. <br /> Initially defined as JSON, these tokens are
-		then converted into CSS variables, making them seamlessly usable in code.
+		Tokens are essential for maintaining design consistency. <br /> They leverage CSS variables to enable easy theming across projects. <br />
+		Initially defined as JSON, these tokens are then converted into CSS variables, making them seamlessly usable in code.
 
 		<Space height="var(--token-space-6)" />
 		<div>

@@ -5,10 +5,7 @@
 
 <svelte:head>
 	<title>Davidnet - Design System</title>
-	<meta
-		name="description"
-		content="Explains how to use the building blocks for davidnet's advanced UI."
-	/>
+	<meta name="description" content="Explains how to use the building blocks for davidnet's advanced UI." />
 </svelte:head>
 
 <Base>
@@ -22,13 +19,7 @@
 					<h1>Svelte-UI</h1>
 					The building blocks for davidnet's advanced UI.
 				</div>
-				<img
-					class="topimage"
-					src="/images/logos/svelte-ui.png"
-					height="150px"
-					aria-hidden="true"
-					alt=""
-				/>
+				<img class="topimage" src="/images/logos/svelte-ui.png" height="150px" aria-hidden="true" alt="" />
 			</FlexWrapper>
 		</FlexWrapper>
 	</div>

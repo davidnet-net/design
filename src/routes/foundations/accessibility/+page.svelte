@@ -5,10 +5,7 @@
 
 <svelte:head>
 	<title>Accessibility - Davidnet Design System</title>
-	<meta
-		name="description"
-		content="Explains how to integrate Davidnet's Design System. In your sveltekit project."
-	/>
+	<meta name="description" content="Explains how to integrate Davidnet's Design System. In your sveltekit project." />
 </svelte:head>
 
 <Base>
@@ -20,13 +17,7 @@
 					<h1>Accessibility</h1>
 					Makes everyone able to interact with Davidnet.
 				</div>
-				<img
-					class="topimage"
-					src="/images/headers/accessibility.svg"
-					height="300px"
-					aria-hidden="true"
-					alt=""
-				/>
+				<img class="topimage" src="/images/headers/accessibility.svg" height="300px" aria-hidden="true" alt="" />
 			</FlexWrapper>
 		</FlexWrapper>
 	</div>

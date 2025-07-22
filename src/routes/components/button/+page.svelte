@@ -8,10 +8,7 @@
 <svelte:head
 	>``
 	<title>Button - Davidnet Design System</title>
-	<meta
-		name="description"
-		content="A button triggers an event or action. Its the base of interactivity."
-	/>
+	<meta name="description" content="A button triggers an event or action. Its the base of interactivity." />
 </svelte:head>
 
 <Base>
@@ -23,13 +20,7 @@
 					<h1>Button</h1>
 					A button triggers an event or action. Its the base of interactivity.
 				</div>
-				<img
-					class="topimage"
-					src="/images/headers/button.svg"
-					height="300px"
-					aria-hidden="true"
-					alt=""
-				/>
+				<img class="topimage" src="/images/headers/button.svg" height="300px" aria-hidden="true" alt="" />
 			</FlexWrapper>
 		</FlexWrapper>
 	</div>

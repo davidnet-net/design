@@ -20,21 +20,8 @@
 	}
 
 	function showToast(
-		Pos:
-			| "bottom-left"
-			| "bottom-center"
-			| "bottom-right"
-			| "top-left"
-			| "top-center"
-			| "top-right" = "bottom-left",
-		appearance:
-			| "info"
-			| "warning"
-			| "danger"
-			| "discover"
-			| "success"
-			| "primary"
-			| undefined = "info"
+		Pos: "bottom-left" | "bottom-center" | "bottom-right" | "top-left" | "top-center" | "top-right" = "bottom-left",
+		appearance: "info" | "warning" | "danger" | "discover" | "success" | "primary" | undefined = "info"
 	) {
 		toast({
 			title: "Toasted",
@@ -100,15 +87,9 @@
 
 	<h2>Buttons</h2>
 
-	<Button appearance="subtle" onClick={() => console.log("Subtle Button Pressed")}
-		>Subtle Button</Button
-	>
-	<Button appearance="primary" onClick={() => console.log("Primary Button Pressed")}
-		>Primary Button</Button
-	>
-	<Button appearance="warning" onClick={() => console.log("Warning Button Pressed")}
-		>Warning Button</Button
-	>
+	<Button appearance="subtle" onClick={() => console.log("Subtle Button Pressed")}>Subtle Button</Button>
+	<Button appearance="primary" onClick={() => console.log("Primary Button Pressed")}>Primary Button</Button>
+	<Button appearance="warning" onClick={() => console.log("Warning Button Pressed")}>Warning Button</Button>
 	<Button appearance="danger">Danger Button</Button>
 	<Button appearance="discover">Discover Button</Button>
 	<Button appearance="primary" disabled>Disabled Button</Button>
@@ -140,9 +121,7 @@
 	<Space height="50px" />
 	<h2>LinkButton</h2>
 
-	<LinkButton href="https://davidnet.net" appearance="primary" iconafter="open_in_new"
-		>Link Button</LinkButton
-	>
+	<LinkButton href="https://davidnet.net" appearance="primary" iconafter="open_in_new">Link Button</LinkButton>
 
 	<br />
 	<Space height="50px" />
@@ -158,8 +137,7 @@
 	<Space height="50px" />
 	<h2>LinkIconButton</h2>
 
-	<LinkIconButton alt="Test Link" href="https://davidnet.net" icon="star" appearance="warning"
-	></LinkIconButton>
+	<LinkIconButton alt="Test Link" href="https://davidnet.net" icon="star" appearance="warning"></LinkIconButton>
 
 	<br />
 	<Space height="50px" />
@@ -210,24 +188,12 @@
 	<Space height="50px" />
 	<h2>Toasts</h2>
 
-	<Button appearance="primary" onClick={() => showToast("bottom-left", "info")}
-		>Toast - bottom-left</Button
-	>
-	<Button appearance="warning" onClick={() => showToast("bottom-center", "warning")}
-		>Toast - bottom-center</Button
-	>
-	<Button appearance="danger" onClick={() => showToast("bottom-right", "danger")}
-		>Toast - bottom-right</Button
-	>
-	<Button appearance="discover" onClick={() => showToast("top-left", "discover")}
-		>Toast - top-left</Button
-	>
-	<Button appearance="subtle" onClick={() => showToast("top-center", "success")}
-		>Toast - top-center</Button
-	>
-	<Button appearance="primary" onClick={() => showToast("top-right", "primary")}
-		>Toast - top-right</Button
-	>
+	<Button appearance="primary" onClick={() => showToast("bottom-left", "info")}>Toast - bottom-left</Button>
+	<Button appearance="warning" onClick={() => showToast("bottom-center", "warning")}>Toast - bottom-center</Button>
+	<Button appearance="danger" onClick={() => showToast("bottom-right", "danger")}>Toast - bottom-right</Button>
+	<Button appearance="discover" onClick={() => showToast("top-left", "discover")}>Toast - top-left</Button>
+	<Button appearance="subtle" onClick={() => showToast("top-center", "success")}>Toast - top-center</Button>
+	<Button appearance="primary" onClick={() => showToast("top-right", "primary")}>Toast - top-right</Button>
 	<br />
 	<Space height="20px" />
 	<br />

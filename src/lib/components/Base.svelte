@@ -8,19 +8,9 @@
 <nav id="top-nav">
 	<div class="nav-left">
 		{#if $sidenavOpen}
-			<IconButton
-				appearance="subtle"
-				icon="left_panel_close"
-				alt="Closes sidebar"
-				onClick={() => sidenavOpen.set(false)}
-			/>
+			<IconButton appearance="subtle" icon="left_panel_close" alt="Closes sidebar" onClick={() => sidenavOpen.set(false)} />
 		{:else}
-			<IconButton
-				appearance="subtle"
-				icon="left_panel_open"
-				alt="Opens sidebar"
-				onClick={() => sidenavOpen.set(true)}
-			/>
+			<IconButton appearance="subtle" icon="left_panel_open" alt="Opens sidebar" onClick={() => sidenavOpen.set(true)} />
 		{/if}
 
 		<a href="https://davidnet.net">

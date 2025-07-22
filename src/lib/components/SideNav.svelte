@@ -93,9 +93,7 @@
 						appearance={item.href === currentPath ? "primary" : "subtle"}
 						justifycontent="start"
 						stretchwidth
-						overidetextcolor={item.href === currentPath
-							? undefined
-							: "var(--token-color-text-default-tertiary)"}
+						overidetextcolor={item.href === currentPath ? undefined : "var(--token-color-text-default-tertiary)"}
 						on:click={() => navigate(item)}
 					>
 						{item.label}
@@ -120,9 +118,7 @@
 			</div>
 			<br />
 			<div class="data">
-				<a class="data-url" target="_blank" href={metadata.commitUrl}
-					>{metadata.commitHash}</a
-				>
+				<a class="data-url" target="_blank" href={metadata.commitUrl}>{metadata.commitHash}</a>
 				| {commitdate}
 			</div>
 		</div>
@@ -134,16 +130,12 @@
 		<br />
 		<div id="svelte-ui-info">
 			<div>
-				<a class="topurl" target="_blank" href={svelteui_metadata.repoUrl}
-					>@davidnet/svelte-ui</a
-				>
+				<a class="topurl" target="_blank" href={svelteui_metadata.repoUrl}>@davidnet/svelte-ui</a>
 			</div>
 			<br />
 			<div class="data">
 				{svelteui_metadata.version} |
-				<a class="data-url" target="_blank" href={svelteui_metadata.commitUrl}
-					>{svelteui_metadata.commitHash}</a
-				>
+				<a class="data-url" target="_blank" href={svelteui_metadata.commitUrl}>{svelteui_metadata.commitHash}</a>
 				| {commitdate_svelteui}
 			</div>
 		</div>

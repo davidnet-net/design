@@ -6,10 +6,7 @@
 
 <svelte:head>
 	<title>Get started - Davidnet Design System</title>
-	<meta
-		name="description"
-		content="Explains how to integrate Davidnet's Design System. In your sveltekit project."
-	/>
+	<meta name="description" content="Explains how to integrate Davidnet's Design System. In your sveltekit project." />
 </svelte:head>
 
 <Base>
@@ -19,16 +16,9 @@
 			<FlexWrapper direction="row" gap="var(--token-space-6)" width="100%">
 				<div class="topheader">
 					<h1>Get started</h1>
-					Explains how to integrate Davidnet's Design System.<br />In your sveltekit
-					project.
+					Explains how to integrate Davidnet's Design System.<br />In your sveltekit project.
 				</div>
-				<img
-					class="topimage"
-					src="/images/headers/get-started.png"
-					height="300px"
-					aria-hidden="true"
-					alt=""
-				/>
+				<img class="topimage" src="/images/headers/get-started.png" height="300px" aria-hidden="true" alt="" />
 			</FlexWrapper>
 		</FlexWrapper>
 	</div>
@@ -47,10 +37,7 @@
 		<CodeBlock language="ts" code="npm install @davidnet/svelte-ui" />
 		<h3 class="nospacing-below">Step 2</h3>
 		<p>Include the root styling in your app.html.</p>
-		<CodeBlock
-			language="html"
-			code="<link rel=&quot;stylesheet&quot; href=&quot;https://design.davidnet.net/global.css&quot;>"
-		/>
+		<CodeBlock language="html" code="<link rel=&quot;stylesheet&quot; href=&quot;https://design.davidnet.net/global.css&quot;>" />
 		<h3 class="nospacing-below">Step 3</h3>
 		<p>Include core components in your +layout.svelte.</p>
 		<CodeBlock language="svelte" code={raw_layoutexample} />

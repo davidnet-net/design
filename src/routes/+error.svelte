@@ -15,17 +15,13 @@
 			<h1>404</h1>
 			<h2>We couldn't find the page you're were looking for.</h2>
 			<p>
-				If this issue persists. Please make an <a
-					href="https://github.com/davidnet-net/design/issues/new/choose">Issue</a
-				>.
+				If this issue persists. Please make an <a href="https://github.com/davidnet-net/design/issues/new/choose">Issue</a>.
 			</p>
 		{:else if page.status.toString() === "500"}
 			<h1>404</h1>
 			<h2>We couldn't find the page you're were looking for.</h2>
 			<p>
-				If this issue persists. Please make an <a
-					href="https://github.com/davidnet-net/design/issues/new/choose">Issue</a
-				>.
+				If this issue persists. Please make an <a href="https://github.com/davidnet-net/design/issues/new/choose">Issue</a>.
 			</p>
 		{:else}
 			<h1>{page.status.toString()}</h1>
@@ -33,9 +29,7 @@
 			<h3>What we know</h3>
 			<p>{page.error?.message}</p>
 			<p>
-				If this issue persists. Please make an <a
-					href="https://github.com/davidnet-net/design/issues/new/choose">Issue</a
-				>.
+				If this issue persists. Please make an <a href="https://github.com/davidnet-net/design/issues/new/choose">Issue</a>.
 			</p>
 		{/if}
 
