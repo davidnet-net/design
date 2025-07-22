@@ -29,4 +29,4 @@ secrets.DEPLOY_KEY
 sudo apt update
 sudo apt install rsync
 
-[RSYNC is required on the server to use rsync]
+[RSYNC is required on the server and github to use rsync]
