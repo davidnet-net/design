@@ -22,27 +22,29 @@
 			</FlexWrapper>
 		</FlexWrapper>
 	</div>
-	<main>
-		<h2 class="nospacing">Prerequisites</h2>
-		<p><a href="https://svelte.dev/">Sveltekit</a> ^5.0.0 project</p>
-		<p><a href="https://nodejs.org">NodeJS</a> ^20.18.0</p>
-		<p><a href="https://npmjs.com">NPM</a> ^9.2.0</p>
-		<h2>Installation</h2>
-		<BlockNote appearance="info" title="Notice">
-			Do the following in an sveltekit 5 project. <br /> Create one using: npx sv create.
-		</BlockNote>
-		<Space height="var(--token-space-4)"></Space>
-		<h3 class="nospacing">Step 1</h3>
-		<p>Add the NPM package.</p>
-		<CodeBlock language="ts" code="npm install @davidnet/svelte-ui" />
-		<h3 class="nospacing-below">Step 2</h3>
-		<p>Include the root styling in your app.html.</p>
-		<CodeBlock language="html" code="<link rel=&quot;stylesheet&quot; href=&quot;https://design.davidnet.net/global.css&quot;>" />
-		<h3 class="nospacing-below">Step 3</h3>
-		<p>Include core components in your +layout.svelte.</p>
-		<CodeBlock language="svelte" code={raw_layoutexample} />
-		<p>You are now ready to start using Davidnet Design System.</p>
-	</main>
+	<FlexWrapper direction="column">
+		<main>
+			<h2 class="nospacing">Prerequisites</h2>
+			<p><a href="https://svelte.dev/">Sveltekit</a> ^5.0.0 project</p>
+			<p><a href="https://nodejs.org">NodeJS</a> ^20.18.0</p>
+			<p><a href="https://npmjs.com">NPM</a> ^9.2.0</p>
+			<h2>Installation</h2>
+			<BlockNote appearance="info" title="Notice">
+				Do the following in an sveltekit 5 project. <br /> Create one using: npx sv create.
+			</BlockNote>
+			<Space height="var(--token-space-4)"></Space>
+			<h3 class="nospacing">Step 1</h3>
+			<p>Add the NPM package.</p>
+			<CodeBlock language="ts" code="npm install @davidnet/svelte-ui" />
+			<h3 class="nospacing-below">Step 2</h3>
+			<p>Include the root styling in your app.html.</p>
+			<CodeBlock language="html" code="<link rel=&quot;stylesheet&quot; href=&quot;https://design.davidnet.net/global.css&quot;>" />
+			<h3 class="nospacing-below">Step 3</h3>
+			<p>Include core components in your +layout.svelte.</p>
+			<CodeBlock language="svelte" code={raw_layoutexample} />
+			<p>You are now ready to start using Davidnet Design System.</p>
+		</main>
+	</FlexWrapper>
 </Base>
 
 <style>
