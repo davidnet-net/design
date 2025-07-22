@@ -1,11 +1,12 @@
 <script lang="ts">
-	import Base from '$lib/components/Base.svelte';
-	import { FlexWrapper, Space, CodeBlock, BlockNote, Button, Dropdown } from '@davidnet/svelte-ui';
+	import Base from "$lib/components/Base.svelte";
+	import { FlexWrapper, Space, CodeBlock, Button, Dropdown, toast } from "@davidnet/svelte-ui";
 
-	let appearance: 'subtle' | 'primary' | 'warning' | 'danger' | 'discover' = 'primary';
+	let appearance: "subtle" | "primary" | "warning" | "danger" | "discover" = "primary";
 </script>
 
-<svelte:head>
+<svelte:head
+	>``
 	<title>Button - Davidnet Design System</title>
 	<meta
 		name="description"
@@ -35,11 +36,21 @@
 	<main>
 		<h2>Default</h2>
 		Use default buttons for most actions that aren't the main call to action for a page or area.
-		<Space height="var(--token-space-3)"/>
+		<Space height="var(--token-space-3)" />
 		<div class="example">
-			<Button>Button</Button>
+			<Button
+				onClick={() => {
+					toast({
+						title: "You clicked me ):",
+						icon: "info",
+						appearance: "info",
+						position: "top-center",
+						autoDismiss: 3000
+					});
+				}}>Button</Button
+			>
 		</div>
-        <Space height="var(--token-space-3)"/>
+		<Space height="var(--token-space-3)" />
 		<CodeBlock
 			language="ts"
 			code={`
@@ -50,53 +61,53 @@ import { Button } from "@davidnet/svelte-ui"
 		/>
 
 		<h2>Appearances</h2>
-        Use semantic appearances such as "danger" for delete confirmations.<br>
-        And "discover" for new things.<br>
-        And "primary" for the main action. <br>
-        <Space height="var(--token-space-3)"/>
+		Use semantic appearances such as "danger" for delete confirmations.<br />
+		And "discover" for new things.<br />
+		And "primary" for the main action. <br />
+		<Space height="var(--token-space-3)" />
 		<Dropdown
 			appearance="subtle"
 			iconbefore="format_paint"
 			actions={[
 				{
-					label: 'subtle',
+					label: "subtle",
 					onClick: () => {
-						appearance = 'subtle';
+						appearance = "subtle";
 					}
 				},
 				{
-					label: 'primary',
+					label: "primary",
 					onClick: () => {
-						appearance = 'primary';
+						appearance = "primary";
 					}
 				},
 				{
-					label: 'warning',
+					label: "warning",
 					onClick: () => {
-						appearance = 'warning';
+						appearance = "warning";
 					}
 				},
 				{
-					label: 'danger',
+					label: "danger",
 					onClick: () => {
-						appearance = 'danger';
+						appearance = "danger";
 					}
 				},
 				{
-					label: 'discover',
+					label: "discover",
 					onClick: () => {
-						appearance = 'discover';
+						appearance = "discover";
 					}
 				}
 			]}
 		>
 			Appearance
 		</Dropdown>
-        <Space height="var(--token-space-3)"/>
+		<Space height="var(--token-space-3)" />
 		<div class="example">
 			<Button {appearance}>{appearance} Button</Button>
 		</div>
-        <Space height="var(--token-space-3)"/>
+		<Space height="var(--token-space-3)" />
 		<CodeBlock
 			language="ts"
 			code={`
@@ -116,7 +127,7 @@ import { Button } from "@davidnet/svelte-ui"
 
 	main {
 		padding: var(--token-space-6);
-        line-height: 1.3;
+		line-height: 1.3;
 	}
 
 	h2 {
@@ -132,16 +143,6 @@ import { Button } from "@davidnet/svelte-ui"
 		max-width: 25%;
 		aspect-ratio: 1 / 1;
 		object-fit: contain;
-	}
-
-	.nospacing {
-		margin: var(--token-space-0);
-		padding: var(--token-space-0);
-	}
-
-	.nospacing-below {
-		margin-bottom: var(--token-space-0);
-		padding-bottom: var(--token-space-0);
 	}
 
 	.example {

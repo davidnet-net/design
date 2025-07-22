@@ -1,35 +1,35 @@
 name: Deploy (PROD)
 
 on:
-  push:
-    branches: [main]
+    push:
+        branches: [main]
 
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    name: Build & Deploy
+    deploy:
+        runs-on: ubuntu-latest
+        name: Build & Deploy
 
-    env:
-      DEPLOY_PATH: /var/www/design
+        env:
+            DEPLOY_PATH: /var/www/design
 
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+        steps:
+            - name: Checkout repo
+              uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 20
 
-      - name: Install dependencies
-        run: npm ci
+            - name: Install dependencies
+              run: npm ci
 
-      - name: Build site
-        run: npm run build
+            - name: Build site
+              run: npm run build
 
-      - name: Upload via rsync over SSH
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.DEPLOY_KEY }}" > ~/.ssh/deploy_key
-          chmod 600 ~/.ssh/deploy_key
-          rsync -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no" -avz --delete build/ ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:${{ env.DEPLOY_PATH }}
+            - name: Upload via rsync over SSH
+              run: |
+                  mkdir -p ~/.ssh
+                  echo "${{ secrets.DEPLOY_KEY }}" > ~/.ssh/deploy_key
+                  chmod 600 ~/.ssh/deploy_key
+                  rsync -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no" -avz --delete build/ ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:${{ env.DEPLOY_PATH }}

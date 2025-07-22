@@ -1,60 +1,60 @@
-import { readFileSync, existsSync, writeFileSync } from 'fs';
-import path from 'path';
-import { execSync } from 'child_process';
-let repoUrl = '';
+import { readFileSync, existsSync, writeFileSync } from "fs";
+import path from "path";
+import { execSync } from "child_process";
+let repoUrl = "";
 
 function getGitInfo() {
-  try {
-    const fullCommitHash = execSync('git rev-parse HEAD').toString().trim();
-    const shortCommitHash = fullCommitHash.slice(0, 7);
-    const commitDate = execSync('git log -1 --format=%cI').toString().trim();
-    const branch = execSync('git rev-parse --abbrev-ref HEAD').toString().trim();
+	try {
+		const fullCommitHash = execSync("git rev-parse HEAD").toString().trim();
+		const shortCommitHash = fullCommitHash.slice(0, 7);
+		const commitDate = execSync("git log -1 --format=%cI").toString().trim();
+		const branch = execSync("git rev-parse --abbrev-ref HEAD").toString().trim();
 
-    let commitUrl = '';
-    try {
-      const pkgPath = path.resolve(process.cwd(), 'package.json');
+		let commitUrl = "";
+		try {
+			const pkgPath = path.resolve(process.cwd(), "package.json");
 
-      if (!existsSync(pkgPath)) {
-        throw new Error('package.json not found at expected location');
-      }
+			if (!existsSync(pkgPath)) {
+				throw new Error("package.json not found at expected location");
+			}
 
-      const pkg = JSON.parse(readFileSync(pkgPath, 'utf-8'));
+			const pkg = JSON.parse(readFileSync(pkgPath, "utf-8"));
 
-      if (pkg.repository?.url) {
-        repoUrl = pkg.repository.url;
+			if (pkg.repository?.url) {
+				repoUrl = pkg.repository.url;
 
-        if (repoUrl.startsWith('git+')) {
-          repoUrl = repoUrl.slice(4);
-        }
-        if (repoUrl.endsWith('.git')) {
-          repoUrl = repoUrl.slice(0, -4);
-        }
-        if (repoUrl.startsWith('git@')) {
-          const match = repoUrl.match(/^git@(.*):(.*)\/(.*)$/);
-          if (match) {
-            repoUrl = `https://${match[1]}/${match[2]}/${match[3]}`;
-          }
-        }
+				if (repoUrl.startsWith("git+")) {
+					repoUrl = repoUrl.slice(4);
+				}
+				if (repoUrl.endsWith(".git")) {
+					repoUrl = repoUrl.slice(0, -4);
+				}
+				if (repoUrl.startsWith("git@")) {
+					const match = repoUrl.match(/^git@(.*):(.*)\/(.*)$/);
+					if (match) {
+						repoUrl = `https://${match[1]}/${match[2]}/${match[3]}`;
+					}
+				}
 
-        commitUrl = `${repoUrl}/commit/${fullCommitHash}`;
-      } else {
-        console.warn('Warning: repository.url not found in package.json');
-      }
-    } catch (err) {
-      console.error('Error reading package.json or generating commitUrl:', err);
-    }
+				commitUrl = `${repoUrl}/commit/${fullCommitHash}`;
+			} else {
+				console.warn("Warning: repository.url not found in package.json");
+			}
+		} catch (err) {
+			console.error("Error reading package.json or generating commitUrl:", err);
+		}
 
-    return { fullCommitHash, shortCommitHash, commitDate, branch, commitUrl };
-  } catch (err) {
-    console.error('Error fetching Git info:', err);
-    return {
-      fullCommitHash: 'unknown',
-      shortCommitHash: 'unknown',
-      commitDate: 'unknown',
-      branch: 'unknown',
-      commitUrl: 'unknown',
-    };
-  }
+		return { fullCommitHash, shortCommitHash, commitDate, branch, commitUrl };
+	} catch (err) {
+		console.error("Error fetching Git info:", err);
+		return {
+			fullCommitHash: "unknown",
+			shortCommitHash: "unknown",
+			commitDate: "unknown",
+			branch: "unknown",
+			commitUrl: "unknown"
+		};
+	}
 }
 
 const gitInfo = getGitInfo();
@@ -71,7 +71,7 @@ export const metadata = {
 };
 `;
 
-const outputPath = path.resolve('src/lib/metadata.ts');
+const outputPath = path.resolve("src/lib/metadata.ts");
 writeFileSync(outputPath, content);
 
 console.log(`✅ Generated metadata.ts at ${outputPath}`);

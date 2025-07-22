@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { ThemeProvider, Toaster, ConnectivityCheck } from '@davidnet/svelte-ui';
+	import { ThemeProvider, Toaster, ConnectivityCheck } from "@davidnet/svelte-ui";
 </script>
 
-<ThemeProvider/>
-<Toaster/>
-<ConnectivityCheck/>
+<ThemeProvider />
+<Toaster />
+<ConnectivityCheck />
 <slot />

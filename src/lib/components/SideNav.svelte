@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { Button, LinkButton, Space, metadata as svelteui_metadata } from '@davidnet/svelte-ui';
-	import { navTree, selectedHref, type NavItem } from '$lib/stores/sidenav';
-	import { metadata } from '$lib/metadata';
-	import { page } from '$app/stores';
-	import { goto } from '$app/navigation';
+	import { Button, LinkButton, Space, metadata as svelteui_metadata } from "@davidnet/svelte-ui";
+	import { navTree, selectedHref, type NavItem } from "$lib/stores/sidenav";
+	import { metadata } from "$lib/metadata";
+	import { page } from "$app/state";
+	import { goto } from "$app/navigation";
 
-	$: currentPath = $page.url.pathname;
+	$: currentPath = page.url.pathname;
 
 	// Flatten met depth, alleen kinderen als niet collapsed
 	function flatten(tree: NavItem[], depth = 0): (NavItem & { depth: number })[] {
@@ -21,17 +21,17 @@
 
 	$: flatNav = flatten($navTree);
 
-function toggleItem(tree: NavItem[], targetLabel: string): NavItem[] {
-  return tree.map(item => {
-    if (item.label === targetLabel) {
-      return { ...item, collapsed: !item.collapsed };
-    }
-    if (item.children) {
-      return { ...item, children: toggleItem(item.children, targetLabel) };
-    }
-    return item;
-  });
-}
+	function toggleItem(tree: NavItem[], targetLabel: string): NavItem[] {
+		return tree.map((item) => {
+			if (item.label === targetLabel) {
+				return { ...item, collapsed: !item.collapsed };
+			}
+			if (item.children) {
+				return { ...item, children: toggleItem(item.children, targetLabel) };
+			}
+			return item;
+		});
+	}
 	// Toggle open/dicht, en optioneel navigeren
 	function toggle(item: NavItem) {
 		// Toggle collapsed als er children zijn
@@ -47,31 +47,30 @@ function toggleItem(tree: NavItem[], targetLabel: string): NavItem[] {
 
 	// Navigeren bij klikken op link
 
-function navigate(item: NavItem) {
-  if (item.href) {
-    selectedHref.set(item.href);
-    goto(item.href);
-  }
-}
-
+	function navigate(item: NavItem) {
+		if (item.href) {
+			selectedHref.set(item.href);
+			goto(item.href);
+		}
+	}
 
 	// Format commitdates
 	const commitdate_svelteui = new Intl.DateTimeFormat(undefined, {
-		year: 'numeric',
-		month: 'short',
-		day: 'numeric',
-		hour: '2-digit',
-		minute: '2-digit',
-		timeZoneName: 'short'
+		year: "numeric",
+		month: "short",
+		day: "numeric",
+		hour: "2-digit",
+		minute: "2-digit",
+		timeZoneName: "short"
 	}).format(new Date(svelteui_metadata.commitDate));
 
 	const commitdate = new Intl.DateTimeFormat(undefined, {
-		year: 'numeric',
-		month: 'short',
-		day: 'numeric',
-		hour: '2-digit',
-		minute: '2-digit',
-		timeZoneName: 'short'
+		year: "numeric",
+		month: "short",
+		day: "numeric",
+		hour: "2-digit",
+		minute: "2-digit",
+		timeZoneName: "short"
 	}).format(new Date(metadata.commitDate));
 </script>
 
@@ -79,52 +78,53 @@ function navigate(item: NavItem) {
 	<nav id="side-nav" aria-label="Side navigation">
 		<Space height="var(--token-space-4)"></Space>
 		{#each flatNav as item (item.label)}
-  <div style="padding-left: {item.depth * 1.25}rem;">
-    {#if item.children}
-      <Button
-        appearance="subtle"
-        iconbefore={item.collapsed ? 'keyboard_arrow_right' : 'keyboard_arrow_down'}
-        on:click={() => navTree.update(tree => toggleItem(tree, item.label))}
-        stretchwidth={true}
-        justifycontent="start"
-        overidetextcolor="var(--token-color-text-default-secondary)"
-      >
-        <span
-          style="cursor: pointer"
-          on:click|stopPropagation={() => {
-            navTree.update(tree => toggleItem(tree, item.label));
-            if (item.href) navigate(item);
-          }}
-        >
-          {item.label}
-        </span>
-      </Button>
-    {:else if item.href}
-      <LinkButton
-        href={item.href}
-        appearance={item.href === currentPath ? 'primary' : 'subtle'}
-        justifycontent="start"
-        stretchwidth
-        overidetextcolor={item.href === currentPath
-          ? undefined
-          : 'var(--token-color-text-default-tertiary)'}
-        on:click={() => navigate(item)}
-      >
-        {item.label}
-      </LinkButton>
-    {:else}
-      <Button
-        appearance="subtle"
-        stretchwidth
-        justifycontent="start"
-        on:click={() => navTree.update(tree => toggleItem(tree, item.label))}
-      >
-        {item.label}
-      </Button>
-    {/if}
-  </div>
-{/each}
-
+			<div style="padding-left: {item.depth * 1.25}rem;">
+				{#if item.children}
+					<Button
+						appearance="subtle"
+						iconbefore={item.collapsed ? "keyboard_arrow_right" : "keyboard_arrow_down"}
+						on:click={() => navTree.update((tree) => toggleItem(tree, item.label))}
+						stretchwidth={true}
+						justifycontent="start"
+						overidetextcolor="var(--token-color-text-default-secondary)"
+					>
+						<!-- svelte-ignore a11y_click_events_have_key_events -->
+						<!-- svelte-ignore a11y_no_static_element_interactions -->
+						<span
+							style="cursor: pointer"
+							on:click|stopPropagation={() => {
+								navTree.update((tree) => toggleItem(tree, item.label));
+								if (item.href) navigate(item);
+							}}
+						>
+							{item.label}
+						</span>
+					</Button>
+				{:else if item.href}
+					<LinkButton
+						href={item.href}
+						appearance={item.href === currentPath ? "primary" : "subtle"}
+						justifycontent="start"
+						stretchwidth
+						overidetextcolor={item.href === currentPath
+							? undefined
+							: "var(--token-color-text-default-tertiary)"}
+						on:click={() => navigate(item)}
+					>
+						{item.label}
+					</LinkButton>
+				{:else}
+					<Button
+						appearance="subtle"
+						stretchwidth
+						justifycontent="start"
+						on:click={() => navTree.update((tree) => toggleItem(tree, item.label))}
+					>
+						{item.label}
+					</Button>
+				{/if}
+			</div>
+		{/each}
 	</nav>
 	<div id="bottom-info">
 		<div id="design-info">
@@ -133,7 +133,9 @@ function navigate(item: NavItem) {
 			</div>
 			<br />
 			<div class="data">
-				<a class="data-url" target="_blank" href={metadata.commitUrl}>{metadata.commitHash}</a>
+				<a class="data-url" target="_blank" href={metadata.commitUrl}
+					>{metadata.commitHash}</a
+				>
 				| {commitdate}
 			</div>
 		</div>
@@ -145,7 +147,9 @@ function navigate(item: NavItem) {
 		<br />
 		<div id="svelte-ui-info">
 			<div>
-				<a class="topurl" target="_blank" href={svelteui_metadata.repoUrl}>@davidnet/svelte-ui</a>
+				<a class="topurl" target="_blank" href={svelteui_metadata.repoUrl}
+					>@davidnet/svelte-ui</a
+				>
 			</div>
 			<br />
 			<div class="data">

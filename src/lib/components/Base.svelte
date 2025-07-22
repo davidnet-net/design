@@ -1,10 +1,8 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import { IconButton, Modal, Space, ThemeMenu } from '@davidnet/svelte-ui';
-	import SideNav from '$lib/components/SideNav.svelte';
-	import { sidenavOpen } from '$lib/stores/sidenavOpen';
+	import { IconButton, Modal, Space, ThemeMenu } from "@davidnet/svelte-ui";
+	import SideNav from "$lib/components/SideNav.svelte";
+	import { sidenavOpen } from "$lib/stores/sidenavOpen";
 	let ShowGitModal = false;
-
 </script>
 
 <nav id="top-nav">
@@ -81,19 +79,19 @@
 		on:close={() => (ShowGitModal = false)}
 		options={[
 			{
-				appearance: 'primary',
-				content: 'Design website',
-				onClick: () => (window.location.href = 'https://github.com/davidnet-net/design')
+				appearance: "primary",
+				content: "Design website",
+				onClick: () => (window.location.href = "https://github.com/davidnet-net/design")
 			},
 			{
-				appearance: 'primary',
-				content: 'Design Libary',
-				onClick: () => (window.location.href = 'https://github.com/davidnet-net/svelte-ui')
+				appearance: "primary",
+				content: "Design Libary",
+				onClick: () => (window.location.href = "https://github.com/davidnet-net/svelte-ui")
 			},
 			{
-				appearance: 'subtle',
-				content: 'Davidnet Organisation',
-				onClick: () => (window.location.href = 'https://github.com/davidnet-net/')
+				appearance: "subtle",
+				content: "Davidnet Organisation",
+				onClick: () => (window.location.href = "https://github.com/davidnet-net/")
 			}
 		]}
 	/>
@@ -139,7 +137,7 @@
 	}
 
 	.sidenavroot {
-		padding-top:48px;
+		padding-top: 48px;
 	}
 	main {
 		flex-grow: 1;

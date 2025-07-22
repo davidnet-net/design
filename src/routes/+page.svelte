@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Base from '$lib/components/Base.svelte';
-	import { FlexWrapper, Space, CodeBlock, BlockNote, ImageCard } from '@davidnet/svelte-ui';
+	import Base from "$lib/components/Base.svelte";
+	import { FlexWrapper, Space, ImageCard } from "@davidnet/svelte-ui";
 </script>
 
 <svelte:head>
@@ -35,30 +35,30 @@
 	<main>
 		<h2>Foundations</h2>
 		<FlexWrapper width="100%" justifycontent="start" direction="row" gap="var(--token-space-3)">
-				<ImageCard
-					src="/images/cards/tokens.svg"
-					alt=""
-					title="Tokens"
-					description="Tokens make it easy to make design consistent."
-					href="/foundations/tokens/"
-				/>
-				<ImageCard
-					src="/images/cards/accessibility.svg"
-					alt=""
-					title="Accessibility"
-					description="Designing with accessibility in mind lets everyone use Davidnet."
-					href="/foundations/accessibility/"
-				/>
+			<ImageCard
+				src="/images/cards/tokens.svg"
+				alt=""
+				title="Tokens"
+				description="Tokens make it easy to make design consistent."
+				href="/foundations/tokens/"
+			/>
+			<ImageCard
+				src="/images/cards/accessibility.svg"
+				alt=""
+				title="Accessibility"
+				description="Designing with accessibility in mind lets everyone use Davidnet."
+				href="/foundations/accessibility/"
+			/>
 		</FlexWrapper>
 		<h2>Components</h2>
 		<FlexWrapper width="100%" justifycontent="start" direction="row" gap="var(--token-space-3)">
-				<ImageCard
-					src="/images/cards/button.svg"
-					alt=""
-					title="Buttons"
-					description="A button triggers an event or action. Its the base of interactivity."
-					href="/components/button/"
-				/>
+			<ImageCard
+				src="/images/cards/button.svg"
+				alt=""
+				title="Buttons"
+				description="A button triggers an event or action. Its the base of interactivity."
+				href="/components/button/"
+			/>
 		</FlexWrapper>
 	</main>
 </Base>
@@ -85,20 +85,5 @@
 		max-width: 25%;
 		aspect-ratio: 1 / 1;
 		object-fit: contain;
-	}
-
-	.ad {
-		margin: var(--token-space-2);
-		padding: var(--token-space-0);
-		font-size: 5vw;
-	}
-	.nospacing {
-		margin: var(--token-space-0);
-		padding: var(--token-space-0);
-	}
-
-	.nospacing-below {
-		margin-bottom: var(--token-space-0);
-		padding-bottom: var(--token-space-0);
 	}
 </style>

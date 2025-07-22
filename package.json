@@ -14,7 +14,7 @@
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"format": "prettier --write .",
+		"fmt": "prettier --write .",
 		"lint": "prettier --check . && eslint .",
 		"genmetadata": "node meta/scripts/GenerateMetaData.js",
 		"proddev": "npm run genmetadata && npm run build && npm run preview"

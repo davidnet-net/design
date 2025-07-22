@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Base from '$lib/components/Base.svelte';
-	import { FlexWrapper, Space, CodeBlock, BlockNote } from '@davidnet/svelte-ui';
+	import Base from "$lib/components/Base.svelte";
+	import { FlexWrapper, Space } from "@davidnet/svelte-ui";
 </script>
 
 <svelte:head>
@@ -30,9 +30,7 @@
 			</FlexWrapper>
 		</FlexWrapper>
 	</div>
-	<main>
-		Yap
-    </main>
+	<main>Yap</main>
 </Base>
 
 <style>
@@ -48,10 +46,6 @@
 		line-height: 1.5;
 	}
 
-	h2 {
-		font-size: 2rem;
-	}
-
 	.topheader {
 		max-width: 50%;
 		line-height: 1.3;
@@ -62,30 +56,4 @@
 		aspect-ratio: 1 / 1;
 		object-fit: contain;
 	}
-
-	.nospacing {
-		margin: var(--token-space-0);
-		padding: var(--token-space-0);
-	}
-
-	.nospacing-below {
-		margin-bottom: var(--token-space-0);
-		padding-bottom: var(--token-space-0);
-	}
-
-    .token-back {
-        background-color: var(--token-color-surface-sunken-normal);
-        padding: 15px;
-        border-radius: 5px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .token-back > div {
-        height: 50px;
-        width: 150px;
-        background-color: red;
-    }
 </style>

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Base from '$lib/components/Base.svelte';
-	import { FlexWrapper, Space, CodeBlock, BlockNote } from '@davidnet/svelte-ui';
+	import Base from "$lib/components/Base.svelte";
+	import { FlexWrapper, Space, CodeBlock, BlockNote } from "@davidnet/svelte-ui";
 </script>
 
 <svelte:head>
@@ -18,7 +18,8 @@
 			<FlexWrapper direction="row" gap="var(--token-space-6)" width="100%">
 				<div class="topheader">
 					<h1>Get started</h1>
-					Explains how to integrate Davidnet's Design System.<br />In your sveltekit project.
+					Explains how to integrate Davidnet's Design System.<br />In your sveltekit
+					project.
 				</div>
 				<img
 					class="topimage"
@@ -42,10 +43,13 @@
 		<Space height="var(--token-space-4)"></Space>
 		<h3 class="nospacing">Step 1</h3>
 		<p>Add the NPM package.</p>
-		<CodeBlock language="ts" code={`npm install @davidnet/svelte-ui`} />
+		<CodeBlock language="ts" code="npm install @davidnet/svelte-ui" />
 		<h3 class="nospacing-below">Step 2</h3>
 		<p>Include the root styling in your app.html.</p>
-		<CodeBlock language="html" code={`<link rel="stylesheet" href="https://design.davidnet.net/global.css">`} />
+		<CodeBlock
+			language="html"
+			code="<link rel=&quot;stylesheet&quot; href=&quot;https://design.davidnet.net/global.css&quot;>"
+		/>
 		<h3 class="nospacing-below">Step 3</h3>
 		<p>Include core components in your +layout.svelte.</p>
 		<CodeBlock

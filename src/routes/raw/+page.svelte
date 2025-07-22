@@ -1,8 +1,3 @@
-<svelte:head>
-	<title>Raw - Davidnet Design</title>
-	<meta name="description" content="Displays all elements on a raw page." />
-</svelte:head>
-
 <script lang="ts">
 	import {
 		ThemeMenu,
@@ -17,7 +12,7 @@
 		toast,
 		BlockNote,
 		IconDropdown
-	} from '@davidnet/svelte-ui';
+	} from "@davidnet/svelte-ui";
 	let showModal = false;
 
 	function closeModal() {
@@ -26,25 +21,25 @@
 
 	function showToast(
 		Pos:
-			| 'bottom-left'
-			| 'bottom-center'
-			| 'bottom-right'
-			| 'top-left'
-			| 'top-center'
-			| 'top-right' = 'bottom-left',
+			| "bottom-left"
+			| "bottom-center"
+			| "bottom-right"
+			| "top-left"
+			| "top-center"
+			| "top-right" = "bottom-left",
 		appearance:
-			| 'info'
-			| 'warning'
-			| 'danger'
-			| 'discover'
-			| 'success'
-			| 'primary'
-			| undefined = 'info'
+			| "info"
+			| "warning"
+			| "danger"
+			| "discover"
+			| "success"
+			| "primary"
+			| undefined = "info"
 	) {
 		toast({
-			title: 'Toasted',
-			desc: 'Toast delivered at ' + Pos,
-			icon: 'info',
+			title: "Toasted",
+			desc: "Toast delivered at " + Pos,
+			icon: "info",
 			appearance: appearance,
 			position: Pos,
 			autoDismiss: 3000
@@ -59,6 +54,11 @@
 		alert("Action 2 triggered");
 	}
 </script>
+
+<svelte:head>
+	<title>Raw - Davidnet Design</title>
+	<meta name="description" content="Displays all elements on a raw page." />
+</svelte:head>
 
 <div id="root">
 	<ThemeMenu />
@@ -100,13 +100,13 @@
 
 	<h2>Buttons</h2>
 
-	<Button appearance="subtle" onClick={() => console.log('Subtle Button Pressed')}
+	<Button appearance="subtle" onClick={() => console.log("Subtle Button Pressed")}
 		>Subtle Button</Button
 	>
-	<Button appearance="primary" onClick={() => console.log('Primary Button Pressed')}
+	<Button appearance="primary" onClick={() => console.log("Primary Button Pressed")}
 		>Primary Button</Button
 	>
-	<Button appearance="warning" onClick={() => console.log('Warning Button Pressed')}
+	<Button appearance="warning" onClick={() => console.log("Warning Button Pressed")}
 		>Warning Button</Button
 	>
 	<Button appearance="danger">Danger Button</Button>
@@ -127,10 +127,10 @@
 
 	<SplitButton
 		appearance="primary"
-		onClick={() => console.log('Main clicked')}
+		onClick={() => console.log("Main clicked")}
 		actions={[
-			{ label: 'Secondary A', onClick: () => console.log('Clicked A') },
-			{ label: 'Secondary B', onClick: () => console.log('Clicked B') }
+			{ label: "Secondary A", onClick: () => console.log("Clicked A") },
+			{ label: "Secondary B", onClick: () => console.log("Clicked B") }
 		]}
 	>
 		Main
@@ -175,8 +175,8 @@
 			hasCloseBtn={true}
 			on:close={() => (showModal = false)}
 			options={[
-				{ appearance: 'primary', content: 'Done', onClick: closeModal },
-				{ appearance: 'subtle', content: 'Cancel', onClick: closeModal }
+				{ appearance: "primary", content: "Done", onClick: closeModal },
+				{ appearance: "subtle", content: "Cancel", onClick: closeModal }
 			]}
 		/>
 	{/if}
@@ -189,9 +189,9 @@
 		appearance="primary"
 		iconbefore="menu"
 		actions={[
-			{ label: 'Optie 1', onClick: () => alert('Actie 1 uitgevoerd!') },
-			{ label: 'Optie 2', onClick: () => alert('Actie 2 uitgevoerd!') },
-			{ label: 'Optie 3', onClick: () => alert('Optie 3!') }
+			{ label: "Optie 1", onClick: () => alert("Actie 1 uitgevoerd!") },
+			{ label: "Optie 2", onClick: () => alert("Actie 2 uitgevoerd!") },
+			{ label: "Optie 3", onClick: () => alert("Optie 3!") }
 		]}>Dropdown</Dropdown
 	>
 
@@ -202,31 +202,30 @@
 		actions={[
 			{ label: "Action 1", onClick: onAction1 },
 			{ label: "Action 2", onClick: onAction2 },
-			{ label: "Logout", onClick: () => alert("Logged out") },
+			{ label: "Logout", onClick: () => alert("Logged out") }
 		]}
 	/>
-
 
 	<br />
 	<Space height="50px" />
 	<h2>Toasts</h2>
 
-	<Button appearance="primary" onClick={() => showToast('bottom-left', 'info')}
+	<Button appearance="primary" onClick={() => showToast("bottom-left", "info")}
 		>Toast - bottom-left</Button
 	>
-	<Button appearance="warning" onClick={() => showToast('bottom-center', 'warning')}
+	<Button appearance="warning" onClick={() => showToast("bottom-center", "warning")}
 		>Toast - bottom-center</Button
 	>
-	<Button appearance="danger" onClick={() => showToast('bottom-right', 'danger')}
+	<Button appearance="danger" onClick={() => showToast("bottom-right", "danger")}
 		>Toast - bottom-right</Button
 	>
-	<Button appearance="discover" onClick={() => showToast('top-left', 'discover')}
+	<Button appearance="discover" onClick={() => showToast("top-left", "discover")}
 		>Toast - top-left</Button
 	>
-	<Button appearance="subtle" onClick={() => showToast('top-center', 'success')}
+	<Button appearance="subtle" onClick={() => showToast("top-center", "success")}
 		>Toast - top-center</Button
 	>
-	<Button appearance="primary" onClick={() => showToast('top-right', 'primary')}
+	<Button appearance="primary" onClick={() => showToast("top-right", "primary")}
 		>Toast - top-right</Button
 	>
 	<br />
@@ -240,8 +239,8 @@
 		appearance="info"
 		title="The quick brown fox"
 		actions={[
-			{ appearance: 'primary', content: 'Done', onClick: closeModal },
-			{ appearance: 'subtle', content: 'Cancel', onClick: closeModal }
+			{ appearance: "primary", content: "Done", onClick: closeModal },
+			{ appearance: "subtle", content: "Cancel", onClick: closeModal }
 		]}
 	>
 		The quick brown fox jumps over the lazy dog.
@@ -252,19 +251,19 @@
 		title="The quick brown fox"
 		actions={[
 			{
-				appearance: 'link',
-				content: 'Done',
-				href: 'https://davidnet.net',
+				appearance: "link",
+				content: "Done",
+				href: "https://davidnet.net",
 				onClick: () => {
-					alert('Waah');
+					alert("Waah");
 				}
 			},
 			{
-				appearance: 'link',
-				content: 'Cancel',
-				href: 'https://davidnet.net',
+				appearance: "link",
+				content: "Cancel",
+				href: "https://davidnet.net",
 				onClick: () => {
-					alert('Waah');
+					alert("Waah");
 				}
 			}
 		]}
@@ -277,19 +276,19 @@
 		title="The quick brown fox"
 		actions={[
 			{
-				appearance: 'primary',
-				content: 'Done',
-				href: 'https://davidnet.net',
+				appearance: "primary",
+				content: "Done",
+				href: "https://davidnet.net",
 				onClick: () => {
-					alert('Waah');
+					alert("Waah");
 				}
 			},
 			{
-				appearance: 'subtle',
-				content: 'Cancel',
-				href: 'https://davidnet.net',
+				appearance: "subtle",
+				content: "Cancel",
+				href: "https://davidnet.net",
 				onClick: () => {
-					alert('Waah');
+					alert("Waah");
 				}
 			}
 		]}

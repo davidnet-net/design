@@ -1,6 +1,6 @@
 // src/lib/stores/sidenavOpen.ts
 import { writable } from "svelte/store";
-import { browser } from '$app/environment';
+import { browser } from "$app/environment";
 
 function createSidenavOpenStore() {
 	let initial = true;
@@ -20,7 +20,7 @@ function createSidenavOpenStore() {
 	const store = writable<boolean>(initial);
 
 	if (browser) {
-		store.subscribe(value => {
+		store.subscribe((value) => {
 			localStorage.setItem("sidenavOpen", JSON.stringify(value));
 		});
 	}
