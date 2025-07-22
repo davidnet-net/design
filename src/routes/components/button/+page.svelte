@@ -24,7 +24,8 @@
 			</FlexWrapper>
 		</FlexWrapper>
 	</div>
-	<main>
+	<FlexWrapper direction="column">
+			<main>
 		<h2>Default</h2>
 		Use default buttons for most actions that aren't the main call to action for a page or area.
 		<Space height="var(--token-space-3)" />
@@ -109,6 +110,8 @@ import { Button } from "@davidnet/svelte-ui"
 		/>
 		<br />
 	</main>
+	</FlexWrapper>
+
 </Base>
 
 <style>
