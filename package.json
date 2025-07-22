@@ -8,7 +8,7 @@
 		"url": "git+https://github.com/davidnet-net/design.git"
 	},
 	"scripts": {
-		"dev": "npm run genmetadata && vite dev --host",
+		"dev": "echo 'not generating metadata' && vite dev --host",
 		"build": "npm run genmetadata && vite build",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
@@ -17,7 +17,7 @@
 		"fmt": "prettier --write .",
 		"lint": "prettier --check . && eslint .",
 		"genmetadata": "node meta/scripts/GenerateMetaData.js",
-		"proddev": "npm run genmetadata && npm run build && npm run preview"
+		"proddev": "echo 'not generating metadata' && npm run genmetadata && npm run build && npm run preview"
 	},
 	"devDependencies": {
 		"@eslint/compat": "^1.2.5",
