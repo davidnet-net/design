@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Base from "$lib/components/Base.svelte";
 	import { FlexWrapper, Space, CodeBlock, BlockNote } from "@davidnet/svelte-ui";
+	import raw_layoutexample from "$lib/examples/+layout.svelte?raw";
 </script>
 
 <svelte:head>
@@ -52,18 +53,7 @@
 		/>
 		<h3 class="nospacing-below">Step 3</h3>
 		<p>Include core components in your +layout.svelte.</p>
-		<CodeBlock
-			language="svelte"
-			code={`
-<script lang="ts">
-	import { ThemeProvider, Toaster, ConnectivityCheck } from '@davidnet/svelte-ui';
-</script>
-
-<ThemeProvider />
-<Toaster />
-<ConnectivityCheck />
-<slot />`}
-		/>
+		<CodeBlock language="svelte" code={raw_layoutexample} />
 		<p>You are now ready to start using Davidnet Design System.</p>
 	</main>
 </Base>

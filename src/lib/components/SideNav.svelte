@@ -5,7 +5,7 @@
 	import { page } from "$app/state";
 	import { goto } from "$app/navigation";
 
-	$: currentPath = page.url.pathname;
+	let currentPath = page.url.pathname;
 
 	// Flatten met depth, alleen kinderen als niet collapsed
 	function flatten(tree: NavItem[], depth = 0): (NavItem & { depth: number })[] {
@@ -32,21 +32,8 @@
 			return item;
 		});
 	}
-	// Toggle open/dicht, en optioneel navigeren
-	function toggle(item: NavItem) {
-		// Toggle collapsed als er children zijn
-		if (item.children) {
-			navTree.update((tree) => toggleItem(tree, item.label));
-		}
-
-		// Optioneel navigeren bij toggle (indien ingesteld)
-		if (item.href && item.navigateOnToggle) {
-			window.location.href = item.href;
-		}
-	}
 
 	// Navigeren bij klikken op link
-
 	function navigate(item: NavItem) {
 		if (item.href) {
 			selectedHref.set(item.href);
