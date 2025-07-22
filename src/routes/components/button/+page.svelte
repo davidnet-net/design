@@ -25,93 +25,92 @@
 		</FlexWrapper>
 	</div>
 	<FlexWrapper direction="column">
-			<main>
-		<h2>Default</h2>
-		Use default buttons for most actions that aren't the main call to action for a page or area.
-		<Space height="var(--token-space-3)" />
-		<div class="example">
-			<Button
-				onClick={() => {
-					toast({
-						title: "You clicked me ):",
-						icon: "info",
-						appearance: "info",
-						position: "top-center",
-						autoDismiss: 3000
-					});
-				}}>Button</Button
-			>
-		</div>
-		<Space height="var(--token-space-3)" />
-		<CodeBlock
-			language="ts"
-			code={`
+		<main>
+			<h2>Default</h2>
+			Use default buttons for most actions that aren't the main call to action for a page or area.
+			<Space height="var(--token-space-3)" />
+			<div class="example">
+				<Button
+					onClick={() => {
+						toast({
+							title: "You clicked me ):",
+							icon: "info",
+							appearance: "info",
+							position: "top-center",
+							autoDismiss: 3000
+						});
+					}}>Button</Button
+				>
+			</div>
+			<Space height="var(--token-space-3)" />
+			<CodeBlock
+				language="ts"
+				code={`
 import { Button } from "@davidnet/svelte-ui"
 
 <Button>Button</Button>
         `}
-		/>
+			/>
 
-		<h2>Appearances</h2>
-		Use semantic appearances such as "danger" for delete confirmations.<br />
-		And "discover" for new things.<br />
-		And "primary" for the main action. <br />
-		<Space height="var(--token-space-3)" />
-		<Dropdown
-			appearance="subtle"
-			iconbefore="format_paint"
-			actions={[
-				{
-					label: "subtle",
-					onClick: () => {
-						appearance = "subtle";
+			<h2>Appearances</h2>
+			Use semantic appearances such as "danger" for delete confirmations.<br />
+			And "discover" for new things.<br />
+			And "primary" for the main action. <br />
+			<Space height="var(--token-space-3)" />
+			<Dropdown
+				appearance="subtle"
+				iconbefore="format_paint"
+				actions={[
+					{
+						label: "subtle",
+						onClick: () => {
+							appearance = "subtle";
+						}
+					},
+					{
+						label: "primary",
+						onClick: () => {
+							appearance = "primary";
+						}
+					},
+					{
+						label: "warning",
+						onClick: () => {
+							appearance = "warning";
+						}
+					},
+					{
+						label: "danger",
+						onClick: () => {
+							appearance = "danger";
+						}
+					},
+					{
+						label: "discover",
+						onClick: () => {
+							appearance = "discover";
+						}
 					}
-				},
-				{
-					label: "primary",
-					onClick: () => {
-						appearance = "primary";
-					}
-				},
-				{
-					label: "warning",
-					onClick: () => {
-						appearance = "warning";
-					}
-				},
-				{
-					label: "danger",
-					onClick: () => {
-						appearance = "danger";
-					}
-				},
-				{
-					label: "discover",
-					onClick: () => {
-						appearance = "discover";
-					}
-				}
-			]}
-		>
-			Appearance
-		</Dropdown>
-		<Space height="var(--token-space-3)" />
-		<div class="example">
-			<Button {appearance}>{appearance} Button</Button>
-		</div>
-		<Space height="var(--token-space-3)" />
-		<CodeBlock
-			language="ts"
-			code={`
+				]}
+			>
+				Appearance
+			</Dropdown>
+			<Space height="var(--token-space-3)" />
+			<div class="example">
+				<Button {appearance}>{appearance} Button</Button>
+			</div>
+			<Space height="var(--token-space-3)" />
+			<CodeBlock
+				language="ts"
+				code={`
 import { Button } from "@davidnet/svelte-ui"
 
 <Button appearance="${appearance}">${appearance} Button</Button>
         `}
-		/>
-		<br />
-	</main>
+			/>
+			<br />
+		</main>
 	</FlexWrapper>
-
 </Base>
 
 <style>
