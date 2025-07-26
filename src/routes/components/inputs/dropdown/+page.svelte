@@ -10,6 +10,8 @@
 	let choice2: string | null = null;
 	let iconbefore: string = "format_paint";
 
+	let appearance: "subtle" | "primary" | "warning" | "danger" | "discover" = "primary";
+
 	const actions = [
 		{ label: "Option A", value: "A" },
 		{ label: "Option B", value: "B" },
@@ -80,8 +82,8 @@
 			Calls the provided function onchange. This is recommended if you need directly handle the value change in a function.
 			<Space height="var(--token-space-3)" />
 			<div class="example">
-				<Dropdown value={null} actions={customActions} appearance="primary" />
-				<p>Selected: {choice2}</p>
+				<Dropdown value={null} actions={customActions} appearance="primary" >Function List</Dropdown>
+				<p>Selected: <b>{choice2 || "null"}</b></p>
 			</div>
 			<Space height="var(--token-space-3)" />
 			<CodeBlock language="ts" code={raw_funcexample} />
@@ -107,7 +109,7 @@
 			</div>
 			<Space height="var(--token-space-3)" />
 			<CodeBlock language="ts" code={raw_iconbeforeexample} />
-            <Space height="var(--token-space-3)" />
+			<Space height="var(--token-space-3)" />
 			<BlockNote
 				title="Placeholder"
 				appearance="error"
@@ -122,6 +124,65 @@
 			>
 				Make sure to give an valid icon.
 			</BlockNote>
+			<Space height="var(--token-space-3)" />
+			<h2>Appearances</h2>
+			<Dropdown
+				appearance="subtle"
+				iconbefore="format_paint"
+				actions={[
+					{
+						label: "subtle",
+						onClick: () => {
+							appearance = "subtle";
+						}
+					},
+					{
+						label: "primary",
+						onClick: () => {
+							appearance = "primary";
+						}
+					},
+					{
+						label: "warning",
+						onClick: () => {
+							appearance = "warning";
+						}
+					},
+					{
+						label: "danger",
+						onClick: () => {
+							appearance = "danger";
+						}
+					},
+					{
+						label: "discover",
+						onClick: () => {
+							appearance = "discover";
+						}
+					}
+				]}
+			>
+				Appearance
+			</Dropdown>
+			<Space height="var(--token-space-3)" />
+			<div class="example">
+				<Dropdown
+					{appearance}
+					actions={[
+						{ label: "Option A", value: "A" },
+						{ label: "Option B", value: "B" }
+					]}>{appearance}</Dropdown
+				>
+			</div>
+			<Space height="var(--token-space-3)" />
+			<CodeBlock
+				language="ts"
+				code={`
+import { Dropdown } from "@davidnet/svelte-ui"
+
+<Dropdown  appearance="${appearance}" actions={[ { label: "Option A", value: "A" }, { label: "Option B", value: "B" } ]}">${appearance}</Dropdown>
+`}
+			/>
 		</main>
 	</FlexWrapper>
 </Base>

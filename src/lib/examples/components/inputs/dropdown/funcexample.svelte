@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Dropdown } from "@davidnet/svelte-ui";
 
-	let choice = null;
+	let choice: null | string = null;
 
 	const actions = [
 		{ label: "Option A", value: "A" },
