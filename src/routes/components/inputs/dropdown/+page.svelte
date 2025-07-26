@@ -82,7 +82,7 @@
 			Calls the provided function onchange. This is recommended if you need directly handle the value change in a function.
 			<Space height="var(--token-space-3)" />
 			<div class="example">
-				<Dropdown value={null} actions={customActions} appearance="primary" >Function List</Dropdown>
+				<Dropdown value={null} actions={customActions} appearance="primary">Function List</Dropdown>
 				<p>Selected: <b>{choice2 || "null"}</b></p>
 			</div>
 			<Space height="var(--token-space-3)" />

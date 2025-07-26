@@ -22,19 +22,20 @@
 		</FlexWrapper>
 	</div>
 	<main>
-        <h2>Source</h2>
-        Icons are sourced from <a href="https://fonts.google.com/icons" target="_blank">Google Material Icons</a>.
-        <br>
+		<h2>Source</h2>
+		Icons are sourced from<a href="https://fonts.google.com/icons" target="_blank">Google Material Icons</a>.
+		<br />
 
-        <h2>Privacy</h2>
-        Instead of making requests to google servers. Icons are hosted on davidnet's servers. So that you are protected from CDN tracking.
-        <br>
+		<h2>Privacy</h2>
+		Instead of making requests to google servers. Icons are hosted on davidnet's servers. So that you are protected from CDN tracking.
+		<br />
 
-        <h2>Usage</h2>
-        When an component asks for an icon provide the name of the icon as a string.
-        <br>
-        Click on an icon on <a href="https://fonts.google.com/icons" target="_blank">Google Material Icons</a> and scroll down in the right sidebar. Until you see "Icon name".
-    </main>
+		<h2>Usage</h2>
+		When an component asks for an icon provide the name of the icon as a string.
+		<br />
+		Click on an icon on <a href="https://fonts.google.com/icons" target="_blank">Google Material Icons</a> and scroll down in the right sidebar. Until
+		you see "Icon name".
+	</main>
 </Base>
 
 <style>
@@ -61,7 +62,7 @@
 		object-fit: contain;
 	}
 
-    h2 {
-        margin-bottom: 0px;
-    }
+	h2 {
+		margin-bottom: 0px;
+	}
 </style>

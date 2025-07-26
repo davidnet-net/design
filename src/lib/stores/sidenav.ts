@@ -32,7 +32,7 @@ const initialNavTree: NavItem[] = [
 				label: "Icons",
 				collapsed: false,
 				href: "/foundations/icons/"
-			},
+			}
 		]
 	},
 	{
