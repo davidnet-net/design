@@ -1,0 +1,1 @@
+npm install @davidnet/svelte-ui

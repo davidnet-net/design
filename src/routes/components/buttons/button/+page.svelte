@@ -1,6 +1,8 @@
 <script lang="ts">
 	import Base from "$lib/components/Base.svelte";
-	import { FlexWrapper, Space, CodeBlock, Button, Dropdown, toast } from "@davidnet/svelte-ui";
+	import { FlexWrapper, Space, CodeBlock, Button, Dropdown } from "@davidnet/svelte-ui";
+
+	import raw_default from "$lib/examples/components/buttons/button/default.svelte?raw";
 
 	let appearance: "subtle" | "primary" | "warning" | "danger" | "discover" = "primary";
 </script>
@@ -30,27 +32,10 @@
 			Use default buttons for most actions that aren't the main call to action for a page or area.
 			<Space height="var(--token-space-3)" />
 			<div class="example">
-				<Button
-					onClick={() => {
-						toast({
-							title: "You clicked me ):",
-							icon: "info",
-							appearance: "info",
-							position: "top-center",
-							autoDismiss: 3000
-						});
-					}}>Button</Button
-				>
+				<Button onClick={() => {}}>Button</Button>
 			</div>
 			<Space height="var(--token-space-3)" />
-			<CodeBlock
-				language="ts"
-				code={`
-import { Button } from "@davidnet/svelte-ui"
-
-<Button>Button</Button>
-        `}
-			/>
+			<CodeBlock language="ts" code={raw_default} />
 
 			<h2>Appearances</h2>
 			Use semantic appearances such as "danger" for delete confirmations.<br />
@@ -97,7 +82,7 @@ import { Button } from "@davidnet/svelte-ui"
 			</Dropdown>
 			<Space height="var(--token-space-3)" />
 			<div class="example">
-				<Button {appearance}>{appearance} Button</Button>
+				<Button onClick={() => {}} {appearance}>{appearance} Button</Button>
 			</div>
 			<Space height="var(--token-space-3)" />
 			<CodeBlock
@@ -105,7 +90,7 @@ import { Button } from "@davidnet/svelte-ui"
 				code={`
 import { Button } from "@davidnet/svelte-ui"
 
-<Button appearance="${appearance}">${appearance} Button</Button>
+<Button onClick={() => {}} appearance="${appearance}">${appearance} Button</Button>
         `}
 			/>
 			<br />

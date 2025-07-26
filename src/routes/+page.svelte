@@ -40,6 +40,13 @@
 				description="Designing with accessibility in mind lets everyone use Davidnet."
 				href="/foundations/accessibility/"
 			/>
+			<ImageCard
+				src="/images/cards/icons.svg"
+				alt=""
+				title="Icons"
+				description="Explains how icons work in the davidnet design system."
+				href="/foundations/icons/"
+			/>
 		</FlexWrapper>
 		<h2>Components</h2>
 		<FlexWrapper width="100%" justifycontent="start" direction="row" gap="var(--token-space-3)">
@@ -48,7 +55,14 @@
 				alt=""
 				title="Buttons"
 				description="A button triggers an event or action. Its the base of interactivity."
-				href="/components/button/"
+				href="/components/buttons/button/"
+			/>
+			<ImageCard
+				src="/images/cards/dropdown.png"
+				alt=""
+				title="Dropdown"
+				description="A dropdown allows users to select one option from a list."
+				href="/components/inputs/dropdown/"
 			/>
 		</FlexWrapper>
 	</main>

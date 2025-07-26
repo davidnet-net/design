@@ -1,7 +1,9 @@
 <script lang="ts">
 	import Base from "$lib/components/Base.svelte";
 	import { FlexWrapper, Space, CodeBlock, BlockNote } from "@davidnet/svelte-ui";
-	import raw_layoutexample from "$lib/examples/+layout.svelte?raw";
+	import raw_layoutexample from "$lib/examples/get-started/+layout.svelte?raw";
+	import raw_appexample from "$lib/examples/get-started/app.html?raw";
+	import raw_bashinstall from "$lib/examples/get-started/bashinstall.sh?raw";
 </script>
 
 <svelte:head>
@@ -35,10 +37,10 @@
 			<Space height="var(--token-space-4)"></Space>
 			<h3 class="nospacing">Step 1</h3>
 			<p>Add the NPM package.</p>
-			<CodeBlock language="ts" code="npm install @davidnet/svelte-ui" />
+			<CodeBlock language="ts" code={raw_bashinstall} />
 			<h3 class="nospacing-below">Step 2</h3>
 			<p>Include the root styling in your app.html.</p>
-			<CodeBlock language="html" code="<link rel=&quot;stylesheet&quot; href=&quot;https://design.davidnet.net/global.css&quot;>" />
+			<CodeBlock language="html" code={raw_appexample} />
 			<h3 class="nospacing-below">Step 3</h3>
 			<p>Include core components in your +layout.svelte.</p>
 			<CodeBlock language="svelte" code={raw_layoutexample} />
