@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Dropdown } from "@davidnet/svelte-ui";
+	import { Dropdown, TextField } from "@davidnet/svelte-ui";
 
 	let iconbefore: string = "format_paint";
 </script>
@@ -15,5 +15,4 @@
 	Theme
 </Dropdown>
 
-<!-- TODO - Migrate to Davidnet Input -->
-<input type="text" placeholder="Valid icon." bind:value={iconbefore} />
+<TextField type="text" placeholder="Valid icon." bind:value={iconbefore}/>

@@ -1,8 +1,10 @@
 <script lang="ts">
-	import { IconButton, Modal, Space, ThemeMenu } from "@davidnet/svelte-ui";
+	import { Button, IconButton, Modal, Space, ThemeMenu } from "@davidnet/svelte-ui";
 	import SideNav from "$lib/components/SideNav.svelte";
 	import { sidenavOpen } from "$lib/stores/sidenavOpen";
+	import Search from "$lib/components/Search.svelte";
 	let ShowGitModal = false;
+	let open = false;
 </script>
 
 <nav id="top-nav">
@@ -35,7 +37,7 @@
 	</div>
 
 	<div class="nav-center">
-		<span>(Searchbar)</span>
+		<Button appearance="subtle" onClick={() => {open = true}} iconbefore="search">Search</Button>
 	</div>
 
 	<div class="nav-right">
@@ -86,7 +88,7 @@
 		]}
 	/>
 {/if}
-
+<Search {open}/>
 <style>
 	#top-nav {
 		display: flex;

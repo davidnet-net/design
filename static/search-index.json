@@ -1,0 +1,56 @@
+[
+  {
+    "id": "src/routes",
+    "title": "Davidnet - Design System",
+    "description": "Explains how to use the building blocks for davidnet's advanced UI.",
+    "body": "Svelte-UI Foundations Components"
+  },
+  {
+    "id": "src/routes/components/buttons/button",
+    "title": "Button - Davidnet Design System",
+    "description": "A button triggers an event or action. Its the base of interactivity.",
+    "body": "Button Default Appearances"
+  },
+  {
+    "id": "src/routes/components/inputs/dropdown",
+    "title": "Dropdown - Davidnet Design System",
+    "description": "A dropdown allows users to select one option from a list.",
+    "body": "Dropdown Binding Method Function Listen Method Always Show Slot Icon Before Appearances Selected: {choice || \"null\"} Selected: {choice2 || \"null\"}"
+  },
+  {
+    "id": "src/routes/components/inputs/textfield",
+    "title": "TextField - Davidnet Design System",
+    "description": "Lets the user input text.",
+    "body": "TextField Test: {value}"
+  },
+  {
+    "id": "src/routes/foundations/accessibility",
+    "title": "Accessibility - Davidnet Design System",
+    "description": "Explains how to integrate Davidnet's Design System. In your sveltekit project.",
+    "body": "Accessibility"
+  },
+  {
+    "id": "src/routes/foundations/icons",
+    "title": "Icons - Davidnet Design System",
+    "description": "Explains how icons work in the davidnet design system.",
+    "body": "Icons Source Privacy Usage"
+  },
+  {
+    "id": "src/routes/foundations/tokens",
+    "title": "Get started - Davidnet Design System",
+    "description": "Tokens make it easy to make design consistent.",
+    "body": "Tokens"
+  },
+  {
+    "id": "src/routes/get-started",
+    "title": "Get started - Davidnet Design System",
+    "description": "Explains how to integrate Davidnet's Design System. In your sveltekit project.",
+    "body": "Get started Prerequisites Installation Step 1 Step 2 Step 3 Add the NPM package. Include the root styling in your app.html. Include core components in your +layout.svelte. You are now ready to start using Davidnet Design System."
+  },
+  {
+    "id": "src/routes/raw",
+    "title": "Raw - Davidnet Design",
+    "description": "Displays all elements on a raw page.",
+    "body": "Buttons Button Icons SplitButton LinkButton IconButtons LinkIconButton Modal Dropdown Toasts BlockNote Merriweather Sans JetBrains Mono Inter The quick brown fox jumps over the lazy dog The quick brown fox jumps over the lazy dog The quick brown fox jumps over the lazy dog"
+  }
+]
