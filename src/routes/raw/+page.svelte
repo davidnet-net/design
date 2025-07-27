@@ -90,17 +90,17 @@
 	<Button appearance="subtle" onClick={() => console.log("Subtle Button Pressed")}>Subtle Button</Button>
 	<Button appearance="primary" onClick={() => console.log("Primary Button Pressed")}>Primary Button</Button>
 	<Button appearance="warning" onClick={() => console.log("Warning Button Pressed")}>Warning Button</Button>
-	<Button appearance="danger">Danger Button</Button>
-	<Button appearance="discover">Discover Button</Button>
-	<Button appearance="primary" disabled>Disabled Button</Button>
-	<Button loading>Disabled Button</Button>
+	<Button appearance="danger" onClick={() => console.log("Danger Button Pressed")}>Danger Button</Button>
+	<Button appearance="discover" onClick={() => console.log("Discover Button Pressed")}>Discover Button</Button>
+	<Button appearance="primary" onClick={() => console.log("Disabled Button Pressed")} disabled>Disabled Button</Button>
+	<Button onClick={() => {}} loading>Disabled Button</Button>
 
 	<br />
 	<Space height="50px" />
 	<h2>Button Icons</h2>
 
-	<Button iconbefore="star" appearance="primary">iconbefore</Button>
-	<Button iconafter="star" appearance="primary">iconafter</Button>
+	<Button onClick={() => {}} iconbefore="star" appearance="primary">iconbefore</Button>
+	<Button onClick={() => {}} iconafter="star" appearance="primary">iconafter</Button>
 
 	<br />
 	<Space height="50px" />
@@ -127,11 +127,11 @@
 	<Space height="50px" />
 	<h2>IconButtons</h2>
 
-	<IconButton alt="Test Button" icon="star" appearance="warning"></IconButton>
+	<IconButton onClick={() => {}} alt="Test Button" icon="star" appearance="warning"></IconButton>
 
-	<IconButton alt="Disabled Button" icon="star" appearance="warning" disabled></IconButton>
+	<IconButton onClick={() => {}} alt="Disabled Button" icon="star" appearance="warning" disabled></IconButton>
 
-	<IconButton alt="Loading Button" icon="star" appearance="warning" loading></IconButton>
+	<IconButton onClick={() => {}} alt="Loading Button" icon="star" appearance="warning" loading></IconButton>
 
 	<br />
 	<Space height="50px" />

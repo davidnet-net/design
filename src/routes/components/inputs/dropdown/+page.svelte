@@ -1,10 +1,11 @@
 <script lang="ts">
 	import Base from "$lib/components/Base.svelte";
-	import { FlexWrapper, Space, CodeBlock, Dropdown, BlockNote } from "@davidnet/svelte-ui";
+	import { FlexWrapper, Space, CodeBlock, Dropdown, BlockNote, TextField } from "@davidnet/svelte-ui";
 
-	import raw_bindablexample from "$lib/examples/components/inputs/dropdown/bindedexample.svelte?raw";
-	import raw_funcexample from "$lib/examples/components/inputs/dropdown/funcexample.svelte?raw";
-	import raw_iconbeforeexample from "$lib/examples/components/inputs/dropdown/iconbefore.svelte?raw";
+	import raw_bindable_example from "$lib/examples/components/inputs/dropdown/binded_example.svelte?raw";
+	import raw_func_example from "$lib/examples/components/inputs/dropdown/func_example.svelte?raw";
+	import raw_iconbefore_example from "$lib/examples/components/inputs/dropdown/iconbefore.svelte?raw";
+	import raw_alwaysshowslot_example from "$lib/examples/components/inputs/dropdown/alwaysshowslot.svelte?raw";
 
 	let choice: string | null = null;
 	let choice2: string | null = null;
@@ -52,6 +53,7 @@
 			Use an Dropdown to allow users to choose from many options. <br />
 			Without overflowing the screen with alot of options.
 
+			<Space height="var(--token-space-3)" />
 			<BlockNote title="Default Value" appearance="info">
 				Do <b>null</b> for the placeholder in the slot or do an value(In the consuming variable) for an default selection. <br /> for example:
 				<b>let choice = 'A'</b>
@@ -76,7 +78,7 @@
 				<p style="text-align: center">Selected: <b>{choice || "null"}</b></p>
 			</div>
 			<Space height="var(--token-space-3)" />
-			<CodeBlock language="ts" code={raw_bindablexample} />
+			<CodeBlock language="ts" code={raw_bindable_example} />
 
 			<h2>Function Listen Method</h2>
 			Calls the provided function onchange. This is recommended if you need directly handle the value change in a function.
@@ -86,10 +88,27 @@
 				<p>Selected: <b>{choice2 || "null"}</b></p>
 			</div>
 			<Space height="var(--token-space-3)" />
-			<CodeBlock language="ts" code={raw_funcexample} />
+			<CodeBlock language="ts" code={raw_func_example} />
 			<Space height="var(--token-space-3)" />
 			<BlockNote title="Placeholder" appearance="info">Here we did not provide any slot. So the placeholder will fallback to "Menu".</BlockNote>
 
+			<h2>Always Show Slot</h2>
+			The alwaysshowslot prop will show the slot inside the dropdown even if an value is selected.
+			<Space height="var(--token-space-3)" />
+			<div class="example">
+				<Dropdown
+					appearance="primary"
+					actions={[
+						{ label: "dark", value: "dark" },
+						{ label: "light", value: "light" }
+					]}
+					alwaysshowslot
+				>
+				Theme
+				</Dropdown>
+			</div>
+			<Space height="var(--token-space-3)" />
+			<CodeBlock language="ts" code={raw_alwaysshowslot_example}/>
 			<h2>Icon Before</h2>
 			You can also add an icon before the dropdown's placeholder.
 			<Space height="var(--token-space-3)" />
@@ -104,11 +123,10 @@
 				>
 				<Space height="var(--token-space-3)" />
 
-				<!-- TODO - Migrate to Davidnet Input -->
-				<input type="text" placeholder="Valid icon." bind:value={iconbefore} />
+				<TextField type="text" placeholder="Valid icon." bind:value={iconbefore}/>
 			</div>
 			<Space height="var(--token-space-3)" />
-			<CodeBlock language="ts" code={raw_iconbeforeexample} />
+			<CodeBlock language="ts" code={raw_iconbefore_example} />
 			<Space height="var(--token-space-3)" />
 			<BlockNote
 				title="Placeholder"

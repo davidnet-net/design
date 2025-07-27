@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { Dropdown } from "@davidnet/svelte-ui";
 
+	// You cannot select an default value.
 	let choice: null | string = null;
 
 	const actions = [

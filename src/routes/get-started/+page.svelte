@@ -27,12 +27,12 @@
 	<FlexWrapper direction="column">
 		<main>
 			<h2 class="nospacing">Prerequisites</h2>
-			<p><a href="https://svelte.dev/">Sveltekit</a> ^5.0.0 project</p>
-			<p><a href="https://nodejs.org">NodeJS</a> ^20.18.0</p>
-			<p><a href="https://npmjs.com">NPM</a> ^9.2.0</p>
+			<a href="https://svelte.dev/">Sveltekit</a> ^5.0.0 project<br>
+			<a href="https://nodejs.org">NodeJS</a> ^20.18.0<br>
+			<a href="https://npmjs.com">NPM</a> ^9.2.0
 			<h2>Installation</h2>
 			<BlockNote appearance="info" title="Notice">
-				Do the following in an sveltekit 5 project. <br /> Create one using: npx sv create.
+				Do the following in an sveltekit 5 project. <br /> Create one using: <b>npx sv create</b>.
 			</BlockNote>
 			<Space height="var(--token-space-4)"></Space>
 			<h3 class="nospacing">Step 1</h3>

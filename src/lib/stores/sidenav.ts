@@ -9,7 +9,7 @@ export type NavItem = {
 	navigateOnToggle?: boolean;
 };
 
-const NAVTREE_VERSION = 1;
+const NAVTREE_VERSION = 2;
 
 const initialNavTree: NavItem[] = [
 	{ label: "Home", collapsed: false, href: "/" },
@@ -47,7 +47,10 @@ const initialNavTree: NavItem[] = [
 			{
 				label: "Inputs",
 				collapsed: true,
-				children: [{ label: "Dropdown", collapsed: false, href: "/components/inputs/dropdown/" }]
+				children: [
+					{ label: "Dropdown", collapsed: false, href: "/components/inputs/dropdown/" },
+					{ label: "TextField", collapsed: false, href: "/components/inputs/textfield/" }
+				]
 			}
 		]
 	}
