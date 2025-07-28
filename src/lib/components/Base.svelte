@@ -37,7 +37,13 @@
 	</div>
 
 	<div class="nav-center">
-		<Button appearance="subtle" onClick={() => {open = true}} iconbefore="search">Search</Button>
+		<Button
+			appearance="subtle"
+			onClick={() => {
+				open = true;
+			}}
+			iconbefore="search">Search</Button
+		>
 	</div>
 
 	<div class="nav-right">
@@ -88,7 +94,8 @@
 		]}
 	/>
 {/if}
-<Search {open}/>
+<Search {open} />
+
 <style>
 	#top-nav {
 		display: flex;

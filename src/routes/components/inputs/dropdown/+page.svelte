@@ -104,11 +104,11 @@
 					]}
 					alwaysshowslot
 				>
-				Theme
+					Theme
 				</Dropdown>
 			</div>
 			<Space height="var(--token-space-3)" />
-			<CodeBlock language="ts" code={raw_alwaysshowslot_example}/>
+			<CodeBlock language="ts" code={raw_alwaysshowslot_example} />
 			<h2>Icon Before</h2>
 			You can also add an icon before the dropdown's placeholder.
 			<Space height="var(--token-space-3)" />
@@ -123,7 +123,7 @@
 				>
 				<Space height="var(--token-space-3)" />
 
-				<TextField type="text" placeholder="Valid icon." bind:value={iconbefore}/>
+				<TextField type="text" placeholder="Valid icon." bind:value={iconbefore} />
 			</div>
 			<Space height="var(--token-space-3)" />
 			<CodeBlock language="ts" code={raw_iconbefore_example} />

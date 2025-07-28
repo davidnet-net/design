@@ -23,7 +23,7 @@
 	</div>
 	<main>
 		<h2>Source</h2>
-		Icons are sourced from <a href="https://fonts.google.com/icons" target="_blank">Google Material Icons</a>.
+		Icons are sourced from<a href="https://fonts.google.com/icons" target="_blank">Google Material Icons</a>.
 		<br />
 
 		<h2>Privacy</h2>

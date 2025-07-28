@@ -28,14 +28,7 @@
 	</div>
 	<FlexWrapper direction="column">
 		<main>
-			<TextField
-				bind:value
-				label="Test"
-				type="text"
-				placeholder="Test text hier..."
-				{invalid}
-				invalidMessage="Invalid papas."
-			/>
+			<TextField bind:value label="Test" type="text" placeholder="Test text hier..." {invalid} invalidMessage="Invalid papas." />
 			<p>Test: {value}</p>
 		</main>
 	</FlexWrapper>

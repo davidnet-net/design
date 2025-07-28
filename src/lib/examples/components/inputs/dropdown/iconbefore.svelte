@@ -15,4 +15,4 @@
 	Theme
 </Dropdown>
 
-<TextField type="text" placeholder="Valid icon." bind:value={iconbefore}/>
+<TextField type="text" placeholder="Valid icon." bind:value={iconbefore} />

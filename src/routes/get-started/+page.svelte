@@ -27,8 +27,8 @@
 	<FlexWrapper direction="column">
 		<main>
 			<h2 class="nospacing">Prerequisites</h2>
-			<a href="https://svelte.dev/">Sveltekit</a> ^5.0.0 project<br>
-			<a href="https://nodejs.org">NodeJS</a> ^20.18.0<br>
+			<a href="https://svelte.dev/">Sveltekit</a> ^5.0.0 project<br />
+			<a href="https://nodejs.org">NodeJS</a> ^20.18.0<br />
 			<a href="https://npmjs.com">NPM</a> ^9.2.0
 			<h2>Installation</h2>
 			<BlockNote appearance="info" title="Notice">
