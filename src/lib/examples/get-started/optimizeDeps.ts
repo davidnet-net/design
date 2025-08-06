@@ -1,0 +1,3 @@
+optimizeDeps: {
+    exclude: ['@davidnet/svelte-ui']
+}

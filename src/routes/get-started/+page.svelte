@@ -5,6 +5,8 @@
 	import raw_layoutexample from "$lib/examples/get-started/+layout.svelte?raw";
 	import raw_appexample from "$lib/examples/get-started/app.html?raw";
 	import raw_bashinstall from "$lib/examples/get-started/bashinstall.sh?raw";
+	import optimizeDepsexample from "$lib/examples/get-started/optimizeDeps.ts?raw";
+	import viteconfigexample from "$lib/examples/get-started/viteconfig.ts?raw";
 </script>
 
 <svelte:head>
@@ -48,7 +50,23 @@
 			<h3 class="nospacing-below">Step 3</h3>
 			<p>Include core components in your +layout.svelte.</p>
 			<CodeBlock language="svelte" code={raw_layoutexample} />
+			<h3 class="nospacing-below">Step 4</h3>
+			<p>Add @davidnet/svelte-ui to Vite Optimize Exclude.</p>
+			<CodeBlock language="ts" code={optimizeDepsexample} />
+			<p>An full example how that snippet would fit inside vite.config.ts.</p>
+			<CodeBlock language="ts" code={viteconfigexample} />
 			<p>You are now ready to start using Davidnet Design System.</p>
+			<Space height="var(--token-space-1)"/>
+			<h3>Extra Tools</h3>
+			The design system also features code quality guidelines.
+			<br>
+			These guidelines are represented trough ESLint and Prettier configs.
+			<br>
+			View the following pages:
+			<br>
+			<a href="/tools/eslint/">DDS - ESLint</a>
+			<br>
+			<a href="/tools/prettier/">DDS - Prettier</a>
 		</main>
 	</FlexWrapper>
 </Base>
