@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Base from "$lib/components/Base.svelte";
 	import { FlexWrapper, Space, TextField } from "@davidnet/svelte-ui";
-	import "$lib/styles/page.css"
+	import "$lib/styles/page.css";
 
 	let value: string = "";
 	const allowedPattern = /^[a-zA-Z0-9 _-]*$/;

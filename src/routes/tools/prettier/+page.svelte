@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { FlexWrapper, Space, CodeBlock, BlockNote } from "@davidnet/svelte-ui";
+	import { FlexWrapper, Space, CodeBlock } from "@davidnet/svelte-ui";
 	import Base from "$lib/components/Base.svelte";
-	import "$lib/styles/page.css"
-	import prettier from "$lib/examples/tools/prettier.json?raw";
+	import "$lib/styles/page.css";
+	import prettier from "$lib/examples/tools/prettier.txt?raw";
 </script>
 
 <svelte:head>
@@ -19,13 +19,13 @@
 					<h1>Prettier</h1>
 					Makes sure that code style is consistent.
 				</div>
-				<img class="topimage" src="/images/headers/get-started.png" height="300px" aria-hidden="true" alt="" />
+				<img class="topimage" src="/images/logos/external/prettier.png" height="300px" aria-hidden="true" alt="" />
 			</FlexWrapper>
 		</FlexWrapper>
 	</div>
 	<FlexWrapper direction="column">
 		<main>
-            <p>.prettierrc</p>
+			<p>.prettierrc</p>
 			<CodeBlock language="ts" code={prettier} />
 		</main>
 	</FlexWrapper>

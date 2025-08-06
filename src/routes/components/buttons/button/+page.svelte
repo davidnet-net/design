@@ -1,9 +1,9 @@
 <script lang="ts">
 	import Base from "$lib/components/Base.svelte";
 	import { FlexWrapper, Space, CodeBlock, Button, Dropdown } from "@davidnet/svelte-ui";
-	import "$lib/styles/page.css"
+	import "$lib/styles/page.css";
 
-	import raw_default from "$lib/examples/components/buttons/button/default.svelte?raw";
+	import raw_default from "$lib/examples/components/buttons/button/default.txt?raw";
 
 	let appearance: "subtle" | "primary" | "warning" | "danger" | "discover" = "primary";
 </script>

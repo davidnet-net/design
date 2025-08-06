@@ -68,13 +68,7 @@
 		</FlexWrapper>
 		<h2>Tools</h2>
 		<FlexWrapper width="100%" justifycontent="start" direction="row" gap="var(--token-space-3)">
-			<ImageCard
-				src="/images/logos/external/eslint.png"
-				alt=""
-				title="ESLint"
-				description="Ensures code quality."
-				href="/tools/eslint/"
-			/>
+			<ImageCard src="/images/logos/external/eslint.png" alt="" title="ESLint" description="Ensures code quality." href="/tools/eslint/" />
 			<ImageCard
 				src="/images/logos/external/prettier.png"
 				alt=""

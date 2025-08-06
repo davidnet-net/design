@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Base from "$lib/components/Base.svelte";
-	import "$lib/styles/page.css"
+	import "$lib/styles/page.css";
 	import { FlexWrapper, Space } from "@davidnet/svelte-ui";
 </script>
 
@@ -22,7 +22,5 @@
 			</FlexWrapper>
 		</FlexWrapper>
 	</div>
-	<main>
-		Yap
-	</main>
+	<main>Yap</main>
 </Base>

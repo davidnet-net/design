@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { FlexWrapper, Space, CodeBlock, BlockNote } from "@davidnet/svelte-ui";
+	import { FlexWrapper, Space, CodeBlock } from "@davidnet/svelte-ui";
 	import Base from "$lib/components/Base.svelte";
-	import "$lib/styles/page.css"
-	import eslint from "$lib/examples/tools/eslint.js?raw";
+	import "$lib/styles/page.css";
+	import eslint from "$lib/examples/tools/eslint.txt?raw";
 </script>
 
 <svelte:head>
@@ -19,13 +19,13 @@
 					<h1>ESLint</h1>
 					Ensures code quality.
 				</div>
-				<img class="topimage" src="/images/headers/get-started.png" height="300px" aria-hidden="true" alt="" />
+				<img class="topimage" src="/images/logos/external/eslint.png" height="300px" aria-hidden="true" alt="" />
 			</FlexWrapper>
 		</FlexWrapper>
 	</div>
 	<FlexWrapper direction="column">
 		<main>
-            <p>eslint.config.js</p>
+			<p>eslint.config.js</p>
 			<CodeBlock language="ts" code={eslint} />
 		</main>
 	</FlexWrapper>

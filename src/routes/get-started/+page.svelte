@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { FlexWrapper, Space, CodeBlock, BlockNote } from "@davidnet/svelte-ui";
 	import Base from "$lib/components/Base.svelte";
-	import "$lib/styles/page.css"
-	import raw_layoutexample from "$lib/examples/get-started/+layout.svelte?raw";
-	import raw_appexample from "$lib/examples/get-started/app.html?raw";
-	import raw_bashinstall from "$lib/examples/get-started/bashinstall.sh?raw";
-	import optimizeDepsexample from "$lib/examples/get-started/optimizeDeps.ts?raw";
-	import viteconfigexample from "$lib/examples/get-started/viteconfig.ts?raw";
+	import "$lib/styles/page.css";
+	import raw_layoutexample from "$lib/examples/get-started/+layout.txt?raw";
+	import raw_appexample from "$lib/examples/get-started/app.txt?raw";
+	import raw_bashinstall from "$lib/examples/get-started/bashinstall.txt?raw";
+	import optimizeDepsexample from "$lib/examples/get-started/optimizeDeps.txt?raw";
+	import viteconfigexample from "$lib/examples/get-started/viteconfig.txt?raw";
 </script>
 
 <svelte:head>
@@ -31,11 +31,11 @@
 		<main>
 			<h2 class="nospacing">Prerequisites</h2>
 			<a href="https://svelte.dev/">Sveltekit</a> ^5.0.0 project
-			<br>
+			<br />
 			<a href="https://nodejs.org">NodeJS</a> ^20.18.0
-			<br>
+			<br />
 			<a href="https://npmjs.com">NPM</a> ^9.2.0
-			<br>
+			<br />
 			<h2>Installation</h2>
 			<BlockNote appearance="info" title="Notice">
 				Do the following in an sveltekit 5 project. <br /> Create one using: <b>npx sv create</b>.
@@ -56,16 +56,16 @@
 			<p>An full example how that snippet would fit inside vite.config.ts.</p>
 			<CodeBlock language="ts" code={viteconfigexample} />
 			<p>You are now ready to start using Davidnet Design System.</p>
-			<Space height="var(--token-space-1)"/>
+			<Space height="var(--token-space-1)" />
 			<h3>Extra Tools</h3>
 			The design system also features code quality guidelines.
-			<br>
+			<br />
 			These guidelines are represented trough ESLint and Prettier configs.
-			<br>
+			<br />
 			View the following pages:
-			<br>
+			<br />
 			<a href="/tools/eslint/">DDS - ESLint</a>
-			<br>
+			<br />
 			<a href="/tools/prettier/">DDS - Prettier</a>
 		</main>
 	</FlexWrapper>

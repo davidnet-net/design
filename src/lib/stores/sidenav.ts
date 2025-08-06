@@ -9,7 +9,7 @@ export type NavItem = {
 	navigateOnToggle?: boolean;
 };
 
-const NAVTREE_VERSION = 2;
+const NAVTREE_VERSION = 3;
 
 const initialNavTree: NavItem[] = [
 	{ label: "Home", collapsed: false, href: "/" },
@@ -51,6 +51,22 @@ const initialNavTree: NavItem[] = [
 					{ label: "Dropdown", collapsed: false, href: "/components/inputs/dropdown/" },
 					{ label: "TextField", collapsed: false, href: "/components/inputs/textfield/" }
 				]
+			}
+		]
+	},
+	{
+		label: "Tools",
+		collapsed: true,
+		children: [
+			{
+				label: "ESLint",
+				collapsed: false,
+				href: "/tools/eslint/"
+			},
+			{
+				label: "Prettier",
+				collapsed: false,
+				href: "/tools/prettier/"
 			}
 		]
 	}

@@ -1,12 +1,12 @@
 <script lang="ts">
 	import Base from "$lib/components/Base.svelte";
 	import { FlexWrapper, Space, CodeBlock, Dropdown, BlockNote, TextField } from "@davidnet/svelte-ui";
-	import "$lib/styles/page.css"
+	import "$lib/styles/page.css";
 
-	import raw_bindable_example from "$lib/examples/components/inputs/dropdown/binded_example.svelte?raw";
-	import raw_func_example from "$lib/examples/components/inputs/dropdown/func_example.svelte?raw";
-	import raw_iconbefore_example from "$lib/examples/components/inputs/dropdown/iconbefore.svelte?raw";
-	import raw_alwaysshowslot_example from "$lib/examples/components/inputs/dropdown/alwaysshowslot.svelte?raw";
+	import raw_bindable_example from "$lib/examples/components/inputs/dropdown/binded_example.txt?raw";
+	import raw_func_example from "$lib/examples/components/inputs/dropdown/func_example.txt?raw";
+	import raw_iconbefore_example from "$lib/examples/components/inputs/dropdown/iconbefore.txt?raw";
+	import raw_alwaysshowslot_example from "$lib/examples/components/inputs/dropdown/alwaysshowslot.txt?raw";
 
 	let choice: string | null = null;
 	let choice2: string | null = null;
