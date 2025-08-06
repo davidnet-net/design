@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Base from "$lib/components/Base.svelte";
 	import { FlexWrapper, Space, ImageCard } from "@davidnet/svelte-ui";
-	import "$lib/styles/page.css"
+	import "$lib/styles/page.css";
 </script>
 
 <svelte:head>
@@ -64,6 +64,23 @@
 				title="Dropdown"
 				description="A dropdown allows users to select one option from a list."
 				href="/components/inputs/dropdown/"
+			/>
+		</FlexWrapper>
+		<h2>Tools</h2>
+		<FlexWrapper width="100%" justifycontent="start" direction="row" gap="var(--token-space-3)">
+			<ImageCard
+				src="/images/logos/external/eslint.png"
+				alt=""
+				title="ESLint"
+				description="Ensures code quality."
+				href="/tools/eslint/"
+			/>
+			<ImageCard
+				src="/images/logos/external/prettier.png"
+				alt=""
+				title="Prettier"
+				description="Makes sure that code style is consistent."
+				href="/tools/prettier/"
 			/>
 		</FlexWrapper>
 	</main>
