@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Base from "$lib/components/Base.svelte";
+	import "$lib/styles/page.css"
 	import { FlexWrapper, Space } from "@davidnet/svelte-ui";
 </script>
 
@@ -21,30 +22,7 @@
 			</FlexWrapper>
 		</FlexWrapper>
 	</div>
-	<main>Yap</main>
+	<main>
+		Yap
+	</main>
 </Base>
-
-<style>
-	.header {
-		background-color: var(--token-color-surface-sunken-normal);
-	}
-
-	main {
-		padding: var(--token-space-6);
-		white-space: normal;
-		white-space: normal;
-		word-break: break-word;
-		line-height: 1.5;
-	}
-
-	.topheader {
-		max-width: 50%;
-		line-height: 1.3;
-	}
-
-	.topimage {
-		max-width: 25%;
-		aspect-ratio: 1 / 1;
-		object-fit: contain;
-	}
-</style>

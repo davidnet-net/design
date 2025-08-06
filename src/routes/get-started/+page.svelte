@@ -1,6 +1,7 @@
 <script lang="ts">
-	import Base from "$lib/components/Base.svelte";
 	import { FlexWrapper, Space, CodeBlock, BlockNote } from "@davidnet/svelte-ui";
+	import Base from "$lib/components/Base.svelte";
+	import "$lib/styles/page.css"
 	import raw_layoutexample from "$lib/examples/get-started/+layout.svelte?raw";
 	import raw_appexample from "$lib/examples/get-started/app.html?raw";
 	import raw_bashinstall from "$lib/examples/get-started/bashinstall.sh?raw";
@@ -27,9 +28,12 @@
 	<FlexWrapper direction="column">
 		<main>
 			<h2 class="nospacing">Prerequisites</h2>
-			<a href="https://svelte.dev/">Sveltekit</a> ^5.0.0 project<br />
-			<a href="https://nodejs.org">NodeJS</a> ^20.18.0<br />
+			<a href="https://svelte.dev/">Sveltekit</a> ^5.0.0 project
+			<br>
+			<a href="https://nodejs.org">NodeJS</a> ^20.18.0
+			<br>
 			<a href="https://npmjs.com">NPM</a> ^9.2.0
+			<br>
 			<h2>Installation</h2>
 			<BlockNote appearance="info" title="Notice">
 				Do the following in an sveltekit 5 project. <br /> Create one using: <b>npx sv create</b>.
@@ -48,38 +52,3 @@
 		</main>
 	</FlexWrapper>
 </Base>
-
-<style>
-	.header {
-		background-color: var(--token-color-surface-sunken-normal);
-	}
-
-	main {
-		padding: var(--token-space-6);
-	}
-
-	h2 {
-		font-size: 2rem;
-	}
-
-	.topheader {
-		max-width: 50%;
-		line-height: 1.3;
-	}
-
-	.topimage {
-		max-width: 25%;
-		aspect-ratio: 1 / 1;
-		object-fit: contain;
-	}
-
-	.nospacing {
-		margin: var(--token-space-0);
-		padding: var(--token-space-0);
-	}
-
-	.nospacing-below {
-		margin-bottom: var(--token-space-0);
-		padding-bottom: var(--token-space-0);
-	}
-</style>

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Base from "$lib/components/Base.svelte";
 	import { FlexWrapper, Space, CodeBlock, Dropdown, BlockNote, TextField } from "@davidnet/svelte-ui";
+	import "$lib/styles/page.css"
 
 	import raw_bindable_example from "$lib/examples/components/inputs/dropdown/binded_example.svelte?raw";
 	import raw_func_example from "$lib/examples/components/inputs/dropdown/func_example.svelte?raw";
@@ -204,38 +205,3 @@ import { Dropdown } from "@davidnet/svelte-ui"
 		</main>
 	</FlexWrapper>
 </Base>
-
-<style>
-	.header {
-		background-color: var(--token-color-surface-sunken-normal);
-	}
-
-	main {
-		padding: var(--token-space-6);
-		line-height: 1.3;
-	}
-
-	h2 {
-		font-size: 2rem;
-	}
-
-	.topheader {
-		max-width: 50%;
-		line-height: 1.3;
-	}
-
-	.topimage {
-		max-width: 25%;
-		aspect-ratio: 1 / 1;
-		object-fit: contain;
-	}
-
-	.example {
-		background-color: var(--token-color-surface-sunken-normal);
-		width: fit-content;
-		padding: var(--token-space-3);
-		border-radius: 10px;
-		display: flex;
-		flex-direction: column;
-	}
-</style>

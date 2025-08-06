@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Base from "$lib/components/Base.svelte";
 	import { FlexWrapper, Space, ImageCard } from "@davidnet/svelte-ui";
+	import "$lib/styles/page.css"
 </script>
 
 <svelte:head>
@@ -67,28 +68,3 @@
 		</FlexWrapper>
 	</main>
 </Base>
-
-<style>
-	.header {
-		background-color: var(--token-color-surface-sunken-normal);
-	}
-
-	main {
-		padding: var(--token-space-6);
-	}
-
-	h2 {
-		font-size: 2rem;
-	}
-
-	.topheader {
-		max-width: 50%;
-		line-height: 1.3;
-	}
-
-	.topimage {
-		max-width: 25%;
-		aspect-ratio: 1 / 1;
-		object-fit: contain;
-	}
-</style>

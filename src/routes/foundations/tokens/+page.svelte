@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Base from "$lib/components/Base.svelte";
 	import { FlexWrapper, Space, CodeBlock } from "@davidnet/svelte-ui";
+	import "$lib/styles/page.css"
 </script>
 
 <svelte:head>
@@ -34,44 +35,3 @@
 		</div>
 	</main>
 </Base>
-
-<style>
-	.header {
-		background-color: var(--token-color-surface-sunken-normal);
-	}
-
-	main {
-		padding: var(--token-space-6);
-		white-space: normal;
-		white-space: normal;
-		word-break: break-word;
-		line-height: 1.5;
-	}
-
-	.topheader {
-		max-width: 50%;
-		line-height: 1.3;
-	}
-
-	.topimage {
-		max-width: 25%;
-		aspect-ratio: 1 / 1;
-		object-fit: contain;
-	}
-
-	.token-back {
-		background-color: var(--token-color-surface-sunken-normal);
-		padding: 15px;
-		border-radius: 5px;
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		justify-content: space-between;
-	}
-
-	.token-back > div {
-		height: 50px;
-		width: 150px;
-		background-color: red;
-	}
-</style>

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Base from "$lib/components/Base.svelte";
 	import { FlexWrapper, Space, CodeBlock, Button, Dropdown } from "@davidnet/svelte-ui";
+	import "$lib/styles/page.css"
 
 	import raw_default from "$lib/examples/components/buttons/button/default.svelte?raw";
 
@@ -97,36 +98,3 @@ import { Button } from "@davidnet/svelte-ui"
 		</main>
 	</FlexWrapper>
 </Base>
-
-<style>
-	.header {
-		background-color: var(--token-color-surface-sunken-normal);
-	}
-
-	main {
-		padding: var(--token-space-6);
-		line-height: 1.3;
-	}
-
-	h2 {
-		font-size: 2rem;
-	}
-
-	.topheader {
-		max-width: 50%;
-		line-height: 1.3;
-	}
-
-	.topimage {
-		max-width: 25%;
-		aspect-ratio: 1 / 1;
-		object-fit: contain;
-	}
-
-	.example {
-		background-color: var(--token-color-surface-sunken-normal);
-		width: fit-content;
-		padding: var(--token-space-3);
-		border-radius: 10px;
-	}
-</style>

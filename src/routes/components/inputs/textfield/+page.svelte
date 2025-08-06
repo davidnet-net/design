@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Base from "$lib/components/Base.svelte";
 	import { FlexWrapper, Space, TextField } from "@davidnet/svelte-ui";
+	import "$lib/styles/page.css"
 
 	let value: string = "";
 	const allowedPattern = /^[a-zA-Z0-9 _-]*$/;
@@ -33,19 +34,3 @@
 		</main>
 	</FlexWrapper>
 </Base>
-
-<style>
-	.header {
-		background-color: var(--token-color-surface-sunken-normal);
-	}
-
-	main {
-		padding: var(--token-space-6);
-		line-height: 1.3;
-	}
-
-	.topheader {
-		max-width: 50%;
-		line-height: 1.3;
-	}
-</style>
