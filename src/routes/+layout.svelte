@@ -1,8 +1,11 @@
 <script lang="ts">
 	import { ThemeProvider, Toaster, ConnectivityCheck } from "@davidnet/svelte-ui";
+	import { onMount } from "svelte";
 
-	const initloader = document.getElementById("initloader");
-	if (initloader) initloader.remove();
+	onMount(async () => {
+		const initloader = document.getElementById("initloader");
+		if (initloader) initloader.remove();
+	});
 </script>
 
 <ThemeProvider />
